@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -54,11 +54,29 @@ import SaigneesMedicales from './pages/services/paramediacle/saignees-medicales'
 import Paramediacle from './pages/services/paramediacle/index';
 import OxygenTherapy from './pages/services/OxygenTherapy';
 
+// Import des pages de services Féminins
+import ConsultationGynecologique from './pages/services/women/services/consultation-gynecologique';
+import BienEtreFeminin from './pages/services/women/services/bien-etre-feminin';
+import TherapieDeCouple from './pages/services/women/services/therapie-de-couple';
+import EducationSante from './pages/services/women/services/education-sante';
+import WomenServicesIndex from './pages/services/women/services/index';
+import Sexologie from './pages/services/sexologie';
+import SexologieDepistage from './pages/services/sexologie/Depistage';
+import TherapieSexuelle from './pages/services/sexologie/TherapieSexuelle';
+import Cardiologie from './pages/services/cardiologie';
+import ORL from './pages/services/orl';
+import MedecinePreventive from './pages/services/medecine-preventive';
+
 function App() {
   const location = useLocation();
   const isGyneco = location.pathname.startsWith('/services/gynecologie');
   const isAppointment = location.pathname === '/appointment';
+  const isWomenService = location.pathname.startsWith('/services/women/');
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar gynecoTheme={isGyneco} isAppointment={isAppointment} />
@@ -114,10 +132,25 @@ function App() {
           <Route path="/services/paramediacle/saignees-medicales" element={<SaigneesMedicales />} />
           <Route path="/services/paramediacle" element={<Paramediacle />} />
 
+          {/* Services Féminins */}
+          <Route path="/services/women/services/index" element={<WomenServicesIndex />} />
+          <Route path="/services/women/services/consultation-gynecologique" element={<ConsultationGynecologique />} />
+          <Route path="/services/women/services/bien-etre-feminin" element={<BienEtreFeminin />} />
+          <Route path="/services/women/services/therapie-de-couple" element={<TherapieDeCouple />} />
+          <Route path="/services/women/services/education-sante" element={<EducationSante />} />
+
+          {/* Services standards manquants */}
+          <Route path="/services/sexologie" element={<Sexologie />} />
+          <Route path="/services/sexologie/depistage" element={<SexologieDepistage />} />
+          <Route path="/services/sexologie/therapie-sexuelle" element={<TherapieSexuelle />} />
+          <Route path="/services/cardiologie" element={<Cardiologie />} />
+          <Route path="/services/orl" element={<ORL />} />
+          <Route path="/services/medecine-preventive" element={<MedecinePreventive />} />
+
           <Route path="/appointment" element={<Appointment />} />
         </Routes>
       </main>
-      <Footer gynecoTheme={isGyneco} />
+      <Footer gynecoTheme={isGyneco || isWomenService} />
     </div>
   );
 }

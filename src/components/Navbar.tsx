@@ -24,8 +24,13 @@ import {
   FiFeather,
   FiWind,
   FiRadio,
-  FiCpu
+  FiCpu,
+  FiBook,
+  FiShield
 } from 'react-icons/fi';
+import logoBlanc from '../assets/logo/regenlife-logo-blanc.png';
+import logoBleu from '../assets/logo/regenlife-logo-bleu.png';
+import logoRose from '../assets/logo/regenlife-logo-rose.png';
 
 // Styles for custom scrollbar
 const scrollbarStyles = `
@@ -65,10 +70,15 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
       ],
     },
     {
-      label: 'Gynécologie',
-      icon: <FiHeart />,
-      path: '/services/gynecologie',
-   
+      label: 'Services Féminins',
+      icon: <FiHeart className="text-pink-500" />,
+      path: '/services/women/services/index',
+      subMenu: [
+        { label: 'Consultation Gynécologique', path: '/services/women/services/consultation-gynecologique' },
+        { label: 'Bien-être Féminin', path: '/services/women/services/bien-etre-feminin' },
+        { label: 'Thérapie de Couple', path: '/services/women/services/therapie-de-couple' },
+        { label: 'Éducation à la Santé', path: '/services/women/services/education-sante' },
+      ],
     },
     {
       label: 'Traumatologie',
@@ -124,6 +134,26 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
         { label: 'Saignées Médicales', path: '/services/paramediacle/saignees-medicales' },
         { label: 'Kinésithérapie', path: '/services/paramediacle/kinesitherapie' },
       ],
+    },
+    {
+      label: 'Sexologie',
+      icon: <FiActivity className="text-blue-500" />,
+      path: '/services/sexologie',
+    },
+    {
+      label: 'Cardiologie',
+      icon: <FiHeart className="text-blue-500" />,
+      path: '/services/cardiologie',
+    },
+    {
+      label: 'ORL',
+      icon: <FiBook className="text-blue-500" />,
+      path: '/services/orl',
+    },
+    {
+      label: 'Médecine Préventive',
+      icon: <FiShield className="text-blue-500" />,
+      path: '/services/medecine-preventive',
     },
   ];
 
@@ -324,6 +354,8 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     }
   };
 
+  const isWomenService = location.pathname.startsWith('/services/women/');
+
   return (
     <>
       <motion.nav
@@ -343,18 +375,15 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 cursor-pointer w-1/4"
+              className="flex-shrink-0 cursor-pointer w-1/4 flex items-center"
               onClick={() => navigate('/')}
             >
-              <span className={`text-3xl font-bold ${
-                isAppointment
-                  ? 'text-white'
-                  : isScrolled
-                    ? gynecoTheme ? 'text-white' : 'text-blue-600'
-                    : 'text-white'
-              } transition-all duration-300`}>
-                REGENLIFE
-              </span>
+              <img
+                src={isAppointment ? logoBlanc : (isScrolled && !gynecoTheme ? (isWomenService ? logoRose : logoBleu) : logoBlanc)}
+                alt="Regenlife Logo"
+                className="h-20 w-auto transition-all duration-300"
+                style={{ maxHeight: 80 }}
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -405,7 +434,9 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
                       className={`absolute top-full left-0 mt-2 w-80 rounded-xl shadow-xl border z-50 ${
-                        isScrolled ? 'bg-white border-gray-200 text-gray-900' : 'bg-gray-900/98 backdrop-blur-md border-gray-700 text-white'
+                        isScrolled
+                          ? 'bg-white border-gray-200 text-gray-900'
+                          : 'bg-white/70 backdrop-blur-md shadow-xl text-blue-900 border-gray-200'
                       }`}
                     >
                       {/* Liste des spécialités */}
@@ -454,7 +485,9 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                                     exit={{ opacity: 0, x: 20 }}
                                     transition={{ duration: 0.2 }}
                                     className={`absolute top-0 left-full ml-2 w-72 rounded-xl shadow-xl border z-50 ${
-                                      isScrolled ? 'bg-white border-gray-200 text-gray-900' : 'bg-gray-900/98 backdrop-blur-md border-gray-700 text-white'
+                                      isScrolled
+                                        ? 'bg-white border-gray-200 text-gray-900'
+                                        : 'bg-white/70 backdrop-blur-md shadow-xl text-blue-900 border-gray-200'
                                     }`}
                                     onMouseEnter={() => setActiveDropdown(spec.label)}
                                     onMouseLeave={() => setActiveDropdown('Services')}
@@ -502,15 +535,19 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                   scale: 1.05,
                   boxShadow: gynecoTheme
                     ? '0 10px 15px -3px rgba(244, 114, 182, 0.3)'
-                    : '0 10px 15px -3px rgba(59, 130, 246, 0.3)'
+                    : isWomenService
+                      ? '0 10px 15px -3px rgba(236, 72, 153, 0.3)'
+                      : '0 10px 15px -3px rgba(59, 130, 246, 0.3)'
                 }}
                 onClick={() => navigate('/contact')}
                 className={`relative flex items-center px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 ml-auto ${
                   gynecoTheme
                     ? 'bg-pink-500 text-white hover:bg-pink-600'
-                    : isScrolled
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
-                      : 'bg-white text-blue-600 hover:bg-blue-50'
+                    : isWomenService
+                      ? 'bg-pink-600 text-white hover:bg-pink-700'
+                      : isScrolled
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-white text-blue-600 hover:bg-blue-50'
                 }`}
               >
                 <span className="relative z-10 flex items-center">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiHeart, FiActivity, FiTarget, FiBarChart2, FiDroplet, FiUser, FiBook, FiThermometer, FiWind, FiSun, FiZap, FiTrendingUp, FiShield, FiRadio, FiPackage, FiCpu } from 'react-icons/fi';
+import { FiArrowRight, FiHeart, FiActivity, FiTarget, FiBarChart2, FiDroplet, FiUser, FiBook, FiThermometer, FiWind, FiSun, FiZap, FiTrendingUp, FiShield, FiRadio, FiPackage, FiCpu, FiSmile } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
@@ -9,6 +9,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import urologieIcon from '../assets/icons/urologie.png';
+import traumatologieIcon from '../assets/icons/traumatologie.png';
+import chirurgieIcon from '../assets/icons/chirurgie-plastique.png';
+import radiologieIcon from '../assets/icons/radiologie.png';
+import biologieIcon from '../assets/icons/biologie.png';
+import sexologieIcon from '../assets/icons/sexologie.png';
+import cardiologieIcon from '../assets/icons/cardiologie.png';
+import orlIcon from '../assets/icons/orl.png';
+import preventionIcon from '../assets/icons/prevention.png';
+import paramedicalIcon from '../assets/icons/paramedical.png';
 
 // Types
 interface Service {
@@ -262,35 +272,70 @@ const specialtiesLinks = [
     path: '/services/urologie',
     color: 'bg-white border border-primary',
     iconBg: 'bg-primary',
-    icon: <FiDroplet className="h-12 w-12 text-white" />,
+    icon: <img src={urologieIcon} alt="Urologie" className="w-16 h-16 object-contain" />,
   },
   {
     name: 'Traumatologie',
     path: '/services/traumatologie',
     color: 'bg-white border border-primary',
     iconBg: 'bg-primary',
-    icon: <FiActivity className="h-12 w-12 text-white" />,
+    icon: <img src={traumatologieIcon} alt="Traumatologie" className="w-16 h-16 object-contain" />,
   },
   {
     name: 'Chirurgie Plastique',
     path: '/services/chirurgie-plastique',
     color: 'bg-white border border-primary',
     iconBg: 'bg-primary',
-    icon: <FiHeart className="h-12 w-12 text-white" />,
+    icon: <img src={chirurgieIcon} alt="Chirurgie Plastique" className="w-16 h-16 object-contain" />,
   },
   {
     name: 'Radiologie',
     path: '/services/radiologie',
     color: 'bg-white border border-primary',
     iconBg: 'bg-primary',
-    icon: <FiRadio className="h-12 w-12 text-white" />,
+    icon: <img src={radiologieIcon} alt="Radiologie" className="w-16 h-16 object-contain" />,
   },
   {
     name: 'Biologie',
     path: '/services/biologie',
     color: 'bg-white border border-primary',
     iconBg: 'bg-primary',
-    icon: <FiCpu className="h-12 w-12 text-white" />,
+    icon: <img src={biologieIcon} alt="Biologie" className="w-16 h-16 object-contain" />,
+  },
+  {
+    name: 'Sexologie',
+    path: '/services/sexologie',
+    color: 'bg-white border border-primary',
+    iconBg: 'bg-primary',
+    icon: <img src={sexologieIcon} alt="Sexologie" className="w-16 h-16 object-contain" />,
+  },
+  {
+    name: 'Cardiologie',
+    path: '/services/cardiologie',
+    color: 'bg-white border border-primary',
+    iconBg: 'bg-primary',
+    icon: <img src={cardiologieIcon} alt="Cardiologie" className="w-16 h-16 object-contain" />,
+  },
+  {
+    name: 'ORL',
+    path: '/services/orl',
+    color: 'bg-white border border-primary',
+    iconBg: 'bg-primary',
+    icon: <img src={orlIcon} alt="ORL" className="w-16 h-16 object-contain" />,
+  },
+  {
+    name: 'Médecine Préventive',
+    path: '/services/medecine-preventive',
+    color: 'bg-white border border-primary',
+    iconBg: 'bg-primary',
+    icon: <img src={preventionIcon} alt="Médecine Préventive" className="w-16 h-16 object-contain" />,
+  },
+  {
+    name: 'Paramédicale',
+    path: '/services/paramediacle',
+    color: 'bg-white border border-primary',
+    iconBg: 'bg-primary',
+    icon: <img src={paramedicalIcon} alt="Paramédicale" className="w-16 h-16 object-contain" />,
   },
 ];
 
@@ -301,7 +346,7 @@ const Services = () => {
   });
 
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-gray-100" ref={ref}>
+    <section className="min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-gray-100 py-20" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header */}
         <motion.div

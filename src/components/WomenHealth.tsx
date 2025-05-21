@@ -1,45 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiHeart, FiActivity, FiCalendar, FiUsers, FiCoffee, FiBook, FiSmile, FiAward } from 'react-icons/fi';
+import { FiHeart, FiActivity,FiBook, FiSmile, FiAward } from 'react-icons/fi';
 import womenHealthVideo from '../media/7188417_Woman_Women_3840x2160.mp4';
+import { Link } from 'react-router-dom';
 
 const WomenHealth = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   const services = [
     {
       icon: <FiHeart className="w-6 h-6" />,
       title: "Consultation Gynécologique",
-      description: "Des consultations personnalisées pour votre santé féminine."
-    },
-    {
-      icon: <FiUsers className="w-6 h-6" />,
-      title: "Suivi de Grossesse",
-      description: "Un accompagnement complet pendant votre grossesse."
+      description: "Des consultations personnalisées pour votre santé féminine.",
+      path: "/services/women/services/consultation-gynecologique"
     },
     {
       icon: <FiSmile className="w-6 h-6" />,
       title: "Bien-être Féminin",
-      description: "Des solutions pour votre bien-être au quotidien."
+      description: "Des solutions pour votre bien-être au quotidien.",
+      path: "/services/women/services/bien-etre-feminin"
     },
     {
       icon: <FiActivity className="w-8 h-8" />,
       title: "Thérapie de Couple",
-      description: "Soutien psychologique pour les couples"
-    },
-    {
-      icon: <FiCoffee className="w-8 h-8" />,
-      title: "Ateliers Bien-être",
-      description: "Séances de relaxation et de méditation"
+      description: "Soutien psychologique pour les couples",
+      path: "/services/women/services/therapie-de-couple"
     },
     {
       icon: <FiBook className="w-8 h-8" />,
       title: "Éducation à la Santé",
-      description: "Formation et information sur la santé féminine"
+      description: "Formation et information sur la santé féminine",
+      path: "/services/women/services/education-sante"
     }
   ];
 
@@ -115,26 +110,27 @@ const WomenHealth = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-            >
-              <div className="w-12 h-12 bg-pink-50 rounded-lg flex items-center justify-center mb-4 text-pink-500">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">
-                {service.description}
-              </p>
-            </motion.div>
+            <Link to={service.path} key={service.title} style={{ textDecoration: 'none' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-pink-400 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+              >
+                <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-4 text-pink-500 shadow-[0_0_0_6px_rgba(236,72,153,0.08)] group-hover:shadow-[0_0_0_10px_rgba(236,72,153,0.15)] transition-all duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600">
+                  {service.description}
+                </p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

@@ -36,7 +36,6 @@ const Hero = () => {
 
   const handleVideoEnd = () => {
     if (videoRef.current) {
-      // Attendre 4 secondes avant de rejouer la vidéo
       setTimeout(() => {
         videoRef.current?.play();
       }, 4000);
