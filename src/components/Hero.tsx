@@ -74,14 +74,13 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
-            Le Secret des Riches pour une Santé Optimale
+            L’excellence du bien-être, enfin accessible
           </motion.h1>
           <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl text-white mb-8"
           >
-            Découvrez le secret des milliardaires : le caisson hyperbare. 
-            Une technologie de pointe pour votre bien-être.
+            Découvrez le pouvoir régénératif de l’oxygénothérapie hyperbare, la technologie de longévité prisée par les plus grands. Vitalité, jeunesse et performance autrement.
           </motion.p>
           <motion.div
             variants={itemVariants}
