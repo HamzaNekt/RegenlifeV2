@@ -1,58 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
 import { FiArrowRight, FiBatteryCharging, FiWind, FiDroplet, FiRefreshCw, FiActivity, FiSearch } from 'react-icons/fi';
 
 const biologyServices = [
-    {
+  {
     id: 'nad-plus-therapy',
-      title: 'Thérapie NAD+',
-      description: 'Traitement régénératif utilisant le NAD+ pour améliorer la fonction cellulaire et la longévité.',
+    title: 'Thérapie NAD+',
+    description: 'Traitement régénératif utilisant le NAD+ pour améliorer la fonction cellulaire et la longévité.',
     path: '/services/biologie/nad-plus-therapy',
-    icon: <FiBatteryCharging className="h-6 w-6" />
-    },
-    {
+    icon: <FiBatteryCharging className="h-6 w-6" />,
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
     id: 'ozone-therapy',
-      title: 'Thérapie Ozone',
-      description: 'Traitement oxygénothérapie pour améliorer la circulation et la régénération cellulaire.',
+    title: 'Thérapie Ozone',
+    description: 'Traitement oxygénothérapie pour améliorer la circulation et la régénération cellulaire.',
     path: '/services/biologie/ozone-therapy',
-    icon: <FiWind className="h-6 w-6" />
-    },
-    {
+    icon: <FiWind className="h-6 w-6" />,
+    color: 'from-indigo-500 to-indigo-600'
+  },
+  {
     id: 'eboo-therapy',
-      title: 'Thérapie EBOO',
-      description: 'Traitement innovant combinant oxygénothérapie et thérapie par exosomes pour des résultats optimaux.',
+    title: 'Thérapie EBOO',
+    description: 'Traitement innovant combinant oxygénothérapie et thérapie par exosomes pour des résultats optimaux.',
     path: '/services/biologie/eboo-therapy',
-    icon: <FiDroplet className="h-6 w-6" />
-    },
-    {
+    icon: <FiDroplet className="h-6 w-6" />,
+    color: 'from-cyan-500 to-cyan-600'
+  },
+  {
     id: 'therapeutic-plasma-exchange',
-      title: 'Échange Plasmatique Thérapeutique',
-      description: 'Procédure avancée pour purifier le sang et améliorer la fonction immunitaire.',
+    title: 'Échange Plasmatique Thérapeutique',
+    description: 'Procédure avancée pour purifier le sang et améliorer la fonction immunitaire.',
     path: '/services/biologie/therapeutic-plasma-exchange',
-    icon: <FiRefreshCw className="h-6 w-6" />
-    },
-    {
+    icon: <FiRefreshCw className="h-6 w-6" />,
+    color: 'from-sky-500 to-sky-600'
+  },
+  {
     id: 'vitamin-shots',
-      title: 'Injections de Vitamines',
-      description: 'Thérapie par injection de vitamines pour optimiser la santé et le bien-être.',
+    title: 'Injections de Vitamines',
+    description: 'Thérapie par injection de vitamines pour optimiser la santé et le bien-être.',
     path: '/services/biologie/vitamin-shots',
-    icon: <FiActivity className="h-6 w-6" />
-    },
-    {
+    icon: <FiActivity className="h-6 w-6" />,
+    color: 'from-violet-500 to-violet-600'
+  },
+  {
     id: 'advanced-medical-services',
-      title: 'Services Médicaux Avancés',
-      description: 'Analyses et traitements biologiques de pointe pour un diagnostic précis et personnalisé.',
+    title: 'Services Médicaux Avancés',
+    description: 'Analyses et traitements biologiques de pointe pour un diagnostic précis et personnalisé.',
     path: '/services/biologie/advanced-medical-services',
-    icon: <FiSearch className="h-6 w-6" />
-    }
-  ];
+    icon: <FiSearch className="h-6 w-6" />,
+    color: 'from-purple-500 to-purple-600'
+  }
+];
 
 const Biologie: React.FC = () => {
   return (
@@ -75,13 +75,14 @@ const Biologie: React.FC = () => {
             transition={{ duration: 1 }}
             className="text-xl text-white/90 mb-4"
           >
-          Notre service de biologie propose des analyses avancées et des tests de pointe pour un diagnostic précis et personnalisé.
+            Notre service de biologie propose des analyses avancées et des tests de pointe pour un diagnostic précis et personnalisé.
           </motion.p>
         </div>
       </section>
-      {/* Slider Section */}
+
+      {/* Services Grid Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,63 +91,72 @@ const Biologie: React.FC = () => {
           >
             Nos Services de Biologie
           </motion.h2>
-          <style>{`
-            .biology-slider .swiper-wrapper { align-items: center; }
-            .biology-slider .swiper-slide { transition: transform 0.3s; opacity: 0.4; transform: scale(0.8); }
-            .biology-slider .swiper-slide-active { opacity: 1; transform: scale(1); }
-            .biology-slider .swiper-slide-prev, .biology-slider .swiper-slide-next { opacity: 0.7; transform: scale(0.9); }
-            .biology-slider .swiper-button-next, .biology-slider .swiper-button-prev { color: #2563eb; background: white; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); transition: all 0.3s; }
-            .biology-slider .swiper-button-next:hover, .biology-slider .swiper-button-prev:hover { background: #2563eb; color: white; }
-            .biology-slider .swiper-button-next:after, .biology-slider .swiper-button-prev:after { font-size: 22px; font-weight: bold; }
-            .biology-slider .swiper-pagination { position: relative; bottom: -20px; margin-top: 20px; }
-            .biology-slider .swiper-pagination-bullet { width: 10px; height: 10px; background: #2563eb; opacity: 0.5; transition: all 0.3s; margin: 0 6px; }
-            .biology-slider .swiper-pagination-bullet-active { opacity: 1; width: 28px; border-radius: 5px; }
-          `}</style>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false }}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            initialSlide={1}
-            className="biology-slider"
-          >
-            {biologyServices.map((service) => (
-              <SwiperSlide key={service.id} style={{ width: '420px' }}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full w-full"
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {biologyServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group"
+              >
+                <Link
+                  to={service.path}
+                  className="block h-full"
+                  aria-label={`En savoir plus sur ${service.title}`}
                 >
-            <Link 
-              to={service.path}
-                    className="block p-8 h-full flex flex-col"
-                    aria-label={`En savoir plus sur ${service.title}`}
-                  >
-                    <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 text-3xl">
-                      {service.icon}
+                  <div className="relative h-full bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl">
+                    {/* Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                    
+                    <div className="p-8 h-full flex flex-col">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 text-white text-3xl transform group-hover:scale-110 transition-transform duration-300`}>
+                        {service.icon}
+                      </div>
+                      
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 mb-6 flex-grow">
+                        {service.description}
+                      </p>
+                      
+                      <div className="flex items-center text-blue-600 font-medium mt-auto group-hover:translate-x-2 transition-transform duration-300">
+                        En savoir plus
+                        <FiArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 flex-grow">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-blue-600 font-medium mt-auto">
-                      En savoir plus
-                      <FiArrowRight className="ml-2" />
-                    </div>
-            </Link>
-                </motion.div>
-              </SwiperSlide>
-          ))}
-          </Swiper>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-blue-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

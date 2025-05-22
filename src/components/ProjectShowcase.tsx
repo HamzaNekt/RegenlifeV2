@@ -34,8 +34,8 @@ const ProjectShowcase = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen relative">
-      <div className="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000"
+    <div className="w-full h-screen relative overflow-x-hidden max-w-full px-4">
+      <div className="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 min-w-0 max-w-full"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
@@ -46,7 +46,7 @@ const ProjectShowcase = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
 
       {/* Content */}
-      <div className="relative h-full flex items-center justify-center">
+      <div className="relative h-full flex items-center justify-center px-4">
         <AnimatePresence initial={false}>
           <motion.div
             key={projects[current].id}
@@ -62,7 +62,7 @@ const ProjectShowcase = () => {
               </h3>
               <div>
                 <motion.h2 
-                  className="text-7xl text-white font-bold tracking-wider mb-3"
+                  className="text-4xl md:text-7xl text-white font-bold tracking-wider mb-3"
                   style={{ textShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}

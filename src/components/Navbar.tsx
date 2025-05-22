@@ -139,21 +139,53 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
       label: 'Sexologie',
       icon: <FiActivity className="text-blue-500" />,
       path: '/services/sexologie',
+      subMenu: [
+        { label: 'Consultation Sexologique', path: '/services/sexologie/consultation' },
+        { label: 'Thérapie de Couple', path: '/services/sexologie/therapie-couple' },
+        { label: 'Éducation Sexuelle', path: '/services/sexologie/education' },
+        { label: 'Troubles Sexuels', path: '/services/sexologie/troubles' },
+        { label: 'Santé Sexuelle', path: '/services/sexologie/sante' },
+        { label: 'Dépistage', path: '/services/sexologie/depistage' },
+      ],
     },
     {
       label: 'Cardiologie',
       icon: <FiHeart className="text-blue-500" />,
       path: '/services/cardiologie',
+      subMenu: [
+        { label: 'Consultation Cardiologique', path: '/services/cardiologie/consultation' },
+        { label: 'Échographie Cardiaque', path: '/services/cardiologie/echographie' },
+        { label: 'Suivi Cardiaque', path: '/services/cardiologie/suivi' },
+        { label: 'Prévention Cardiaque', path: '/services/cardiologie/prevention' },
+        { label: 'Réadaptation Cardiaque', path: '/services/cardiologie/readaptation' },
+        { label: 'Urgences Cardiaques', path: '/services/cardiologie/urgences' },
+      ],
     },
     {
       label: 'ORL',
       icon: <FiBook className="text-blue-500" />,
       path: '/services/orl',
+      subMenu: [
+        { label: 'Consultation ORL', path: '/services/orl/consultation' },
+        { label: 'Audiométrie', path: '/services/orl/audiometrie' },
+        { label: 'Endoscopie', path: '/services/orl/endoscopie' },
+        { label: 'Chirurgie ORL', path: '/services/orl/chirurgie' },
+        { label: 'Troubles du Sommeil', path: '/services/orl/sommeil' },
+        { label: 'Vertiges', path: '/services/orl/vertiges' },
+      ],
     },
     {
       label: 'Médecine Préventive',
       icon: <FiShield className="text-blue-500" />,
       path: '/services/medecine-preventive',
+      subMenu: [
+        { label: 'Bilan de Santé', path: '/services/medecine-preventive/bilan' },
+        { label: 'Vaccinations', path: '/services/medecine-preventive/vaccinations' },
+        { label: 'Dépistage', path: '/services/medecine-preventive/depistage' },
+        { label: 'Conseils Nutrition', path: '/services/medecine-preventive/nutrition' },
+        { label: 'Activité Physique', path: '/services/medecine-preventive/activite-physique' },
+        { label: 'Suivi Personnalisé', path: '/services/medecine-preventive/suivi-personnalise' },
+      ],
     },
   ];
 
@@ -519,7 +551,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => navigate('/a-propos')}
+                onClick={() => navigate('/about')}
                 className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
                   isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
                 }`}
@@ -600,59 +632,118 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
               } shadow-xl`}
             >
               <div className="px-4 pt-3 pb-6 space-y-3">
-                {serviceDropdowns.map((item) => (
-                  <div key={item.label}>
-                    <motion.button
-                      onClick={() => {
-                        if (item.subMenu) {
-                          handleDropdownEnter();
-                        } else {
-                          navigate(item.path);
-                          setIsOpen(false);
-                        }
-                      }}
-                      className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 relative overflow-hidden group ${
-                        isScrolled
-                          ? 'text-gray-800 hover:bg-gray-50 hover:text-primary'
-                          : 'text-white hover:bg-white/10'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        {item.label}
-                        {item.subMenu && (
-                          <FiChevronDown className={`transition-transform duration-300 ${
-                            activeDropdown === item.label ? 'rotate-180' : ''
-                          }`} />
-                        )}
-                      </div>
-                    </motion.button>
+                {/* Accueil */}
+                <motion.button
+                  onClick={() => {
+                    navigate('/');
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 ${
+                    isScrolled
+                      ? 'text-gray-800 hover:bg-gray-50 hover:text-primary'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  Accueil
+                </motion.button>
 
-                    {item.subMenu && activeDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 space-y-1"
-                      >
-                        {item.subMenu.map((subItem: any) => (
-                          <motion.a
-                            key={subItem.label}
-                            href={subItem.path}
-                            onClick={() => setIsOpen(false)}
-                            className={`block px-4 py-3 text-lg font-medium ${
+                {/* Services Dropdown */}
+                <div className="relative">
+                  <motion.button
+                    onClick={() => {
+                      setActiveDropdown(activeDropdown === 'Services' ? null : 'Services');
+                    }}
+                    className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 flex items-center justify-between ${
+                      isScrolled
+                        ? 'text-gray-800 hover:bg-gray-50 hover:text-primary'
+                        : 'text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <span>Services</span>
+                    <FiChevronDown className={`transition-transform duration-300 ${activeDropdown === 'Services' ? 'rotate-180' : ''}`} />
+                  </motion.button>
+
+                  {activeDropdown === 'Services' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pl-6 space-y-1"
+                    >
+                      {serviceDropdowns.map((item) => (
+                        <div key={item.label} className="relative">
+                          <motion.button
+                            onClick={() => {
+                              navigate(item.path);
+                              setIsOpen(false);
+                            }}
+                            className={`w-full text-left px-4 py-3 rounded-lg text-lg font-bold transition-colors duration-300 flex items-center justify-between ${
                               isScrolled
                                 ? 'text-gray-700 hover:text-primary'
                                 : 'text-gray-300 hover:text-white'
                             }`}
                           >
-                            {subItem.label}
-                          </motion.a>
-                        ))}
-                      </motion.div>
-                    )}
-                  </div>
-                ))}
+                            <span>{item.label}</span>
+                            {item.subMenu && (
+                              <span
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  setActiveDropdown(activeDropdown === item.label ? null : item.label);
+                                }}
+                                className="ml-2 cursor-pointer"
+                              >
+                                <FiChevronDown className={`transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                              </span>
+                            )}
+                          </motion.button>
+
+                          {item.subMenu && activeDropdown === item.label && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="pl-6 space-y-1"
+                            >
+                              {item.subMenu.map((subItem: any) => (
+                                <motion.a
+                                  key={subItem.label}
+                                  href={subItem.path}
+                                  onClick={() => setIsOpen(false)}
+                                  className={`block px-4 py-3 text-base font-medium ${
+                                    isScrolled
+                                      ? 'text-gray-600 hover:text-primary'
+                                      : 'text-gray-400 hover:text-white'
+                                  }`}
+                                >
+                                  {subItem.label}
+                                </motion.a>
+                              ))}
+                            </motion.div>
+                          )}
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* À propos */}
+                <motion.button
+                  onClick={() => {
+                    navigate('/about');
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 ${
+                    isScrolled
+                      ? 'text-gray-800 hover:bg-gray-50 hover:text-primary'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  À propos
+                </motion.button>
+
+                {/* Bouton RDV */}
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {

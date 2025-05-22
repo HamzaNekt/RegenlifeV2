@@ -20,7 +20,7 @@ const Depistage: React.FC = () => {
               Dépistage
             </h1>
             <p className="text-xl mb-8">
-              Tests de dépistage effectués dans un cadre confidentiel et professionnel, garantissant votre discrétion et votre bien-être.
+              Des tests de dépistage efficaces pour la prévention et la détection précoce des maladies.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -49,25 +49,25 @@ const Depistage: React.FC = () => {
               Qu'est-ce que le Dépistage ?
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Notre service de dépistage offre des tests rapides et fiables dans un environnement sécurisé et confidentiel. Nous garantissons votre anonymat et votre confort tout au long du processus.
+              Le dépistage est un ensemble de tests et d'examens permettant de détecter précocement d'éventuels problèmes de santé. Notre approche est basée sur la prévention et l'utilisation de techniques modernes.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Confidentialité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Objectifs</h3>
                 <p className="text-gray-700">
-                  Tests effectués dans le plus grand respect de votre vie privée et de votre anonymat.
+                  Détection précoce des problèmes de santé pour une prise en charge rapide et efficace.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Rapidité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Méthode</h3>
                 <p className="text-gray-700">
-                  Résultats rapides et fiables, avec un accompagnement professionnel.
+                  Tests fiables et techniques modernes pour des résultats précis et rapides.
                 </p>
               </motion.div>
             </div>
@@ -93,9 +93,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Discrétion Totale</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Détection Précoce</h3>
                   <p className="text-gray-700">
-                    Entrée discrète et accueil confidentiel pour préserver votre intimité.
+                    Identification rapide des problèmes de santé pour une meilleure prise en charge.
                   </p>
                 </div>
               </motion.div>
@@ -105,9 +105,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Accompagnement</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Tests Fiables</h3>
                   <p className="text-gray-700">
-                    Soutien professionnel avant, pendant et après le test.
+                    Utilisation de techniques modernes et fiables pour des résultats précis.
                   </p>
                 </div>
               </motion.div>
@@ -125,29 +125,29 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Nos Services
+              Types de Dépistage
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tests Rapides</h3>
-                <p className="text-gray-700">Résultats en quelques minutes pour une tranquillité immédiate</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Dépistage Cardiovasculaire</h3>
+                <p className="text-gray-700">Tests pour la santé cardiaque et vasculaire</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
-                <p className="text-gray-700">Entretien confidentiel avec un professionnel de santé</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Dépistage du Cancer</h3>
+                <p className="text-gray-700">Tests pour la détection précoce des cancers</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi</h3>
-                <p className="text-gray-700">Accompagnement personnalisé selon vos besoins</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Autres Dépistages</h3>
+                <p className="text-gray-700">Tests pour d'autres problèmes de santé</p>
               </motion.div>
             </div>
           </motion.div>
@@ -173,8 +173,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiMapPin className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Entrée Discrète</h3>
-                <p className="text-gray-700">Accès discret et confidentiel à nos locaux</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Stationnement</h3>
+                <p className="text-gray-700">Stationnement gratuit disponible sur place pour votre confort</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -184,7 +184,7 @@ const Depistage: React.FC = () => {
                   <FiTruck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport discret disponible sur demande</p>
+                <p className="text-gray-700">Service de transport disponible sur demande pour faciliter votre venue</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -193,8 +193,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiHome className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Salle d'Attente</h3>
-                <p className="text-gray-700">Espace d'attente privé et confortable</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Logement</h3>
+                <p className="text-gray-700">Options d'hébergement disponibles à proximité selon disponibilité</p>
               </motion.div>
             </div>
           </motion.div>
@@ -203,10 +203,10 @@ const Depistage: React.FC = () => {
         {/* Back Button */}
         <div className="text-center">
           <Link 
-            to="/services/sexologie"
+            to="/services/medecine-preventive"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >
-            Retour aux Services de Sexologie
+            Retour aux Services de Médecine Préventive
           </Link>
         </div>
       </div>

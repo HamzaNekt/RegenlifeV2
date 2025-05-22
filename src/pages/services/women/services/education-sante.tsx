@@ -6,7 +6,7 @@ const EducationSante: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[50vh] bg-gradient-to-r from-pink-500 to-pink-700">
+      <section className="relative h-[50vh] bg-gradient-to-r from-pink-500 to-pink-700 pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative h-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <motion.div

@@ -6,13 +6,24 @@ const Footer = ({ gynecoTheme = false }) => {
     <footer className={`py-12 px-4 ${gynecoTheme ? 'bg-pink-200' : 'bg-gray-900'}`}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className={`text-xl font-bold mb-4 ${gynecoTheme ? 'text-pink-700' : 'text-white'}`}>Services</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Oxygénothérapie Hyperbare</a></li>
-            <li><a href="#" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Thérapie Individuelle</a></li>
-            <li><a href="#" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Coaching en Bien-être</a></li>
-            <li><a href="#" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Art Thérapie</a></li>
-          </ul>
+          <h3 className={`text-xl font-bold mb-4 ${gynecoTheme ? 'text-pink-700' : 'text-white'}`}>Spécialités</h3>
+          <div className="flex flex-row gap-8">
+            <ul className="space-y-2">
+              <li><a href="/services/urologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Urologie</a></li>
+              <li><a href="/services/traumatologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Traumatologie</a></li>
+              <li><a href="/services/radiologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Radiologie</a></li>
+              <li><a href="/services/paramediacle" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Paramédical</a></li>
+              <li><a href="/services/cardiologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Cardiologie</a></li>
+              <li><a href="/services/medecine-preventive" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Médecine Préventive</a></li>
+            </ul>
+            <ul className="space-y-2">
+              <li><a href="/services/women/services/index" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Services Féminins</a></li>
+              <li><a href="/services/chirurgie-plastique" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Chirurgie Plastique</a></li>
+              <li><a href="/services/biologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Biologie</a></li>
+              <li><a href="/services/sexologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Sexologie</a></li>
+              <li><a href="/services/orl" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>ORL</a></li>
+            </ul>
+          </div>
         </div>
         <div>
           <h3 className={`text-xl font-bold mb-4 ${gynecoTheme ? 'text-pink-700' : 'text-white'}`}>Contact</h3>

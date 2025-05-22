@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiUserCheck, FiFeather, FiRefreshCw, FiHeart, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
+import { FiArrowRight, FiActivity, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const Depistage: React.FC = () => {
+const UrgencesCardiaques: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-gradient-to-r from-blue-600 to-blue-800">
+      <section className="relative h-[60vh] bg-gradient-to-r from-red-600 to-red-800">
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <motion.div
@@ -17,17 +17,17 @@ const Depistage: React.FC = () => {
             className="text-white max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Dépistage
+              Urgences Cardiaques
             </h1>
             <p className="text-xl mb-8">
-              Tests de dépistage effectués dans un cadre confidentiel et professionnel, garantissant votre discrétion et votre bien-être.
+              Une prise en charge immédiate et professionnelle pour les situations d'urgence cardiaque, 24h/24 et 7j/7.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white text-red-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              Prendre Rendez-vous
+              Appeler les Urgences
               <FiArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
@@ -46,28 +46,28 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Qu'est-ce que le Dépistage ?
+              Service d'Urgences Cardiaques
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Notre service de dépistage offre des tests rapides et fiables dans un environnement sécurisé et confidentiel. Nous garantissons votre anonymat et votre confort tout au long du processus.
+              Notre service d'urgences cardiaques est équipé pour prendre en charge immédiatement toute situation d'urgence cardiaque. Notre équipe médicale qualifiée est disponible 24h/24 pour assurer une intervention rapide et efficace.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-red-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Confidentialité</h3>
+                <h3 className="text-xl font-semibold text-red-600 mb-3">Disponibilité 24/7</h3>
                 <p className="text-gray-700">
-                  Tests effectués dans le plus grand respect de votre vie privée et de votre anonymat.
+                  Une équipe médicale disponible en permanence pour les urgences.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-red-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Rapidité</h3>
+                <h3 className="text-xl font-semibold text-red-600 mb-3">Intervention Rapide</h3>
                 <p className="text-gray-700">
-                  Résultats rapides et fiables, avec un accompagnement professionnel.
+                  Prise en charge immédiate dès l'arrivée aux urgences.
                 </p>
               </motion.div>
             </div>
@@ -84,18 +84,18 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Avantages du Dépistage
+              Avantages du Service
             </h2>
             <div className="space-y-6">
               <motion.div 
                 whileHover={{ x: 5 }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-red-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Discrétion Totale</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Équipement de Pointe</h3>
                   <p className="text-gray-700">
-                    Entrée discrète et accueil confidentiel pour préserver votre intimité.
+                    Matériel médical moderne pour une prise en charge optimale.
                   </p>
                 </div>
               </motion.div>
@@ -103,11 +103,11 @@ const Depistage: React.FC = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-red-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Accompagnement</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Équipe Spécialisée</h3>
                   <p className="text-gray-700">
-                    Soutien professionnel avant, pendant et après le test.
+                    Médecins et infirmiers formés aux urgences cardiaques.
                   </p>
                 </div>
               </motion.div>
@@ -125,29 +125,29 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Nos Services
+              Types d'Urgences Prises en Charge
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tests Rapides</h3>
-                <p className="text-gray-700">Résultats en quelques minutes pour une tranquillité immédiate</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Douleurs Thoraciques</h3>
+                <p className="text-gray-700">Évaluation et traitement immédiat</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
-                <p className="text-gray-700">Entretien confidentiel avec un professionnel de santé</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Arythmies</h3>
+                <p className="text-gray-700">Gestion des troubles du rythme cardiaque</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi</h3>
-                <p className="text-gray-700">Accompagnement personnalisé selon vos besoins</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Arrêt Cardiaque</h3>
+                <p className="text-gray-700">Réanimation et stabilisation</p>
               </motion.div>
             </div>
           </motion.div>
@@ -168,33 +168,33 @@ const Depistage: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-red-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiMapPin className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <FiMapPin className="w-6 h-6 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Entrée Discrète</h3>
-                <p className="text-gray-700">Accès discret et confidentiel à nos locaux</p>
+                <h3 className="text-xl font-semibold text-red-600 mb-3">Accès Direct</h3>
+                <p className="text-gray-700">Entrée dédiée pour les urgences</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-red-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiTruck className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <FiTruck className="w-6 h-6 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport discret disponible sur demande</p>
+                <h3 className="text-xl font-semibold text-red-600 mb-3">Ambulance</h3>
+                <p className="text-gray-700">Service d'ambulance disponible 24/7</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-red-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiHome className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <FiHome className="w-6 h-6 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Salle d'Attente</h3>
-                <p className="text-gray-700">Espace d'attente privé et confortable</p>
+                <h3 className="text-xl font-semibold text-red-600 mb-3">Accueil</h3>
+                <p className="text-gray-700">Salle d'attente pour les accompagnants</p>
               </motion.div>
             </div>
           </motion.div>
@@ -203,10 +203,10 @@ const Depistage: React.FC = () => {
         {/* Back Button */}
         <div className="text-center">
           <Link 
-            to="/services/sexologie"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            to="/services/cardiologie"
+            className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-300"
           >
-            Retour aux Services de Sexologie
+            Retour aux Services de Cardiologie
           </Link>
         </div>
       </div>
@@ -214,4 +214,4 @@ const Depistage: React.FC = () => {
   );
 };
 
-export default Depistage; 
+export default UrgencesCardiaques; 

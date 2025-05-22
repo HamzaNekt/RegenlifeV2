@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiUserCheck, FiFeather, FiRefreshCw, FiHeart, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
+import { FiArrowRight, FiScissors, FiActivity, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const Depistage: React.FC = () => {
+const ChirurgieORL: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -17,10 +17,10 @@ const Depistage: React.FC = () => {
             className="text-white max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Dépistage
+              Chirurgie ORL
             </h1>
             <p className="text-xl mb-8">
-              Tests de dépistage effectués dans un cadre confidentiel et professionnel, garantissant votre discrétion et votre bien-être.
+              Interventions chirurgicales spécialisées pour traiter les affections de l'oreille, du nez et de la gorge.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -46,28 +46,28 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Qu'est-ce que le Dépistage ?
+              Qu'est-ce que la Chirurgie ORL ?
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Notre service de dépistage offre des tests rapides et fiables dans un environnement sécurisé et confidentiel. Nous garantissons votre anonymat et votre confort tout au long du processus.
+              La chirurgie ORL regroupe l'ensemble des interventions chirurgicales réalisées sur l'oreille, le nez et la gorge. Nos chirurgiens spécialisés utilisent les techniques les plus avancées pour assurer des résultats optimaux.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Confidentialité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Techniques Modernes</h3>
                 <p className="text-gray-700">
-                  Tests effectués dans le plus grand respect de votre vie privée et de votre anonymat.
+                  Utilisation de méthodes chirurgicales innovantes et peu invasives.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Rapidité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Suivi Personnalisé</h3>
                 <p className="text-gray-700">
-                  Résultats rapides et fiables, avec un accompagnement professionnel.
+                  Accompagnement complet avant, pendant et après l'intervention.
                 </p>
               </motion.div>
             </div>
@@ -84,7 +84,7 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Avantages du Dépistage
+              Avantages de la Chirurgie ORL
             </h2>
             <div className="space-y-6">
               <motion.div 
@@ -93,9 +93,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Discrétion Totale</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Expertise Chirurgicale</h3>
                   <p className="text-gray-700">
-                    Entrée discrète et accueil confidentiel pour préserver votre intimité.
+                    Interventions réalisées par des chirurgiens ORL hautement qualifiés.
                   </p>
                 </div>
               </motion.div>
@@ -105,9 +105,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Accompagnement</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Équipement de Pointe</h3>
                   <p className="text-gray-700">
-                    Soutien professionnel avant, pendant et après le test.
+                    Salles d'opération modernes et équipements de dernière génération.
                   </p>
                 </div>
               </motion.div>
@@ -132,22 +132,22 @@ const Depistage: React.FC = () => {
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tests Rapides</h3>
-                <p className="text-gray-700">Résultats en quelques minutes pour une tranquillité immédiate</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Chirurgie de l'Oreille</h3>
+                <p className="text-gray-700">Interventions sur l'oreille moyenne et interne</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
-                <p className="text-gray-700">Entretien confidentiel avec un professionnel de santé</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Chirurgie Nasale</h3>
+                <p className="text-gray-700">Correction des déviations et des problèmes de sinus</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi</h3>
-                <p className="text-gray-700">Accompagnement personnalisé selon vos besoins</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Chirurgie de la Gorge</h3>
+                <p className="text-gray-700">Traitement des amygdales et des problèmes de déglutition</p>
               </motion.div>
             </div>
           </motion.div>
@@ -173,8 +173,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiMapPin className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Entrée Discrète</h3>
-                <p className="text-gray-700">Accès discret et confidentiel à nos locaux</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Stationnement</h3>
+                <p className="text-gray-700">Parking gratuit disponible pour votre confort</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -184,7 +184,7 @@ const Depistage: React.FC = () => {
                   <FiTruck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport discret disponible sur demande</p>
+                <p className="text-gray-700">Service de transport disponible sur demande</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -193,8 +193,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiHome className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Salle d'Attente</h3>
-                <p className="text-gray-700">Espace d'attente privé et confortable</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Accueil</h3>
+                <p className="text-gray-700">Salle d'attente confortable et accueil personnalisé</p>
               </motion.div>
             </div>
           </motion.div>
@@ -203,10 +203,10 @@ const Depistage: React.FC = () => {
         {/* Back Button */}
         <div className="text-center">
           <Link 
-            to="/services/sexologie"
+            to="/services/orl"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >
-            Retour aux Services de Sexologie
+            Retour aux Services ORL
           </Link>
         </div>
       </div>
@@ -214,4 +214,4 @@ const Depistage: React.FC = () => {
   );
 };
 
-export default Depistage; 
+export default ChirurgieORL; 

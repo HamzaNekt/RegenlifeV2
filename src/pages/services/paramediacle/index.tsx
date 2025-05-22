@@ -1,12 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
 import { FiActivity, FiUserCheck, FiDroplet, FiArrowRight } from 'react-icons/fi';
 
 const paramedicalServices = [
@@ -15,21 +9,24 @@ const paramedicalServices = [
     title: 'Kinésithérapie',
     description: 'Soins personnalisés pour restaurer, maintenir et améliorer vos capacités physiques.',
     path: '/services/paramediacle/kinesitherapie',
-    icon: <FiActivity className="h-8 w-8" />
+    icon: <FiActivity className="h-8 w-8" />,
+    color: 'from-blue-500 to-blue-600'
   },
   {
     id: 'osteopathie',
     title: 'Ostéopathie',
     description: 'Approche globale et manuelle pour restaurer l\'équilibre du corps et soulager les douleurs.',
     path: '/services/paramediacle/osteopathie',
-    icon: <FiUserCheck className="h-8 w-8" />
+    icon: <FiUserCheck className="h-8 w-8" />,
+    color: 'from-indigo-500 to-indigo-600'
   },
   {
     id: 'saignees-medicales',
     title: 'Saignées Médicales',
     description: 'Techniques ancestrales revisitées pour une prise en charge moderne et sécurisée.',
     path: '/services/paramediacle/saignees-medicales',
-    icon: <FiDroplet className="h-8 w-8" />
+    icon: <FiDroplet className="h-8 w-8" />,
+    color: 'from-cyan-500 to-cyan-600'
   }
 ];
 
@@ -58,9 +55,10 @@ const Paramediacle: React.FC = () => {
           </motion.p>
         </div>
       </section>
-      {/* Slider Section */}
+
+      {/* Services Grid Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,63 +67,72 @@ const Paramediacle: React.FC = () => {
           >
             Nos Services Paramédicaux
           </motion.h2>
-          <style>{`
-            .paramedical-slider .swiper-wrapper { align-items: center; }
-            .paramedical-slider .swiper-slide { transition: transform 0.3s; opacity: 0.4; transform: scale(0.8); }
-            .paramedical-slider .swiper-slide-active { opacity: 1; transform: scale(1); }
-            .paramedical-slider .swiper-slide-prev, .paramedical-slider .swiper-slide-next { opacity: 0.7; transform: scale(0.9); }
-            .paramedical-slider .swiper-button-next, .paramedical-slider .swiper-button-prev { color: #2563eb; background: white; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); transition: all 0.3s; }
-            .paramedical-slider .swiper-button-next:hover, .paramedical-slider .swiper-button-prev:hover { background: #2563eb; color: white; }
-            .paramedical-slider .swiper-button-next:after, .paramedical-slider .swiper-button-prev:after { font-size: 22px; font-weight: bold; }
-            .paramedical-slider .swiper-pagination { position: relative; bottom: -20px; margin-top: 20px; }
-            .paramedical-slider .swiper-pagination-bullet { width: 10px; height: 10px; background: #2563eb; opacity: 0.5; transition: all 0.3s; margin: 0 6px; }
-            .paramedical-slider .swiper-pagination-bullet-active { opacity: 1; width: 28px; border-radius: 5px; }
-          `}</style>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false }}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            initialSlide={1}
-            className="paramedical-slider"
-          >
-            {paramedicalServices.map((service) => (
-              <SwiperSlide key={service.id} style={{ width: '420px' }}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full w-full"
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {paramedicalServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group"
+              >
+                <Link
+                  to={service.path}
+                  className="block h-full"
+                  aria-label={`En savoir plus sur ${service.title}`}
                 >
-                  <Link
-                    to={service.path}
-                    className="block p-8 h-full flex flex-col items-center text-center"
-                    aria-label={`En savoir plus sur ${service.title}`}
-                  >
-                    <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600 text-4xl">
-                      {service.icon}
+                  <div className="relative h-full bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl">
+                    {/* Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                    
+                    <div className="p-8 h-full flex flex-col">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 text-white text-3xl transform group-hover:scale-110 transition-transform duration-300`}>
+                        {service.icon}
+                      </div>
+                      
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 mb-6 flex-grow">
+                        {service.description}
+                      </p>
+                      
+                      <div className="flex items-center text-blue-600 font-medium mt-auto group-hover:translate-x-2 transition-transform duration-300">
+                        En savoir plus
+                        <FiArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 flex-grow">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-blue-600 font-medium mt-auto justify-center">
-                      En savoir plus
-                      <FiArrowRight className="ml-2" />
-                    </div>
-                  </Link>
-                </motion.div>
-              </SwiperSlide>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
-          </Swiper>
+          </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-blue-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

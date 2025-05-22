@@ -43,7 +43,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="accueil" className="relative h-screen overflow-hidden">
+    <section id="accueil" className="relative h-screen overflow-hidden overflow-x-hidden max-w-full">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -53,7 +53,7 @@ const Hero = () => {
           muted
           playsInline
           onEnded={handleVideoEnd}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover max-w-full min-w-0"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
@@ -74,13 +74,13 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
-            L’excellence du bien-être, enfin accessible
+            L'excellence du bien-être, enfin accessible
           </motion.h1>
           <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl text-white mb-8"
           >
-            Découvrez le pouvoir régénératif de l’oxygénothérapie hyperbare, la technologie de longévité prisée par les plus grands. Vitalité, jeunesse et performance autrement.
+            Découvrez le pouvoir régénératif de l'oxygénothérapie hyperbare, la technologie de longévité prisée par les plus grands. Vitalité, jeunesse et performance autrement.
           </motion.p>
           <motion.div
             variants={itemVariants}

@@ -13,27 +13,59 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: 'Dr. Sarah Johnson',
-    role: 'Fondatrice & Médecin Intégratif',
-    bio: 'Dr. Johnson combine plus de 15 ans d\'expérience en médecine conventionnelle avec des approches holistiques pour offrir des soins personnalisés.',
-    image: '/team/sarah.jpg',
-    specialties: ['Médecine fonctionnelle', 'Nutrition clinique', 'Hormonothérapie bioidentique'],
+    name: 'Dr. Sarah El Amrani',
+    role: 'Médecin généraliste',
+    bio: "Spécialiste en médecine préventive, elle accompagne chaque patient avec écoute et bienveillance.",
+    image: '/team/female1.jpg',
+    specialties: ['Médecine générale', 'Prévention', 'Suivi personnalisé'],
   },
   {
     id: 2,
-    name: 'Dr. Michael Chen',
-    role: 'Médecin & Spécialiste en Longévité',
-    bio: 'Dr. Chen se spécialise dans les approches innovantes pour optimiser la santé et ralentir le processus de vieillissement.',
-    image: '/team/michael.jpg',
-    specialties: ['Médecine anti-âge', 'Optimisation des performances', 'Thérapie cellulaire'],
+    name: 'Dr. Youssef Benali',
+    role: 'Urologue',
+    bio: "Expert en urologie et santé masculine, il privilégie l'innovation et la pédagogie.",
+    image: '/team/male1.jpg',
+    specialties: ['Urologie', 'Dépistage', 'Chirurgie mini-invasive'],
   },
   {
     id: 3,
-    name: 'Dr. Emily Rodriguez',
-    role: 'Naturopathe & Nutritionniste',
-    bio: 'Dr. Rodriguez utilise des approches naturelles pour traiter les causes profondes des problèmes de santé.',
-    image: '/team/emily.jpg',
-    specialties: ['Naturopathie', 'Nutrition thérapeutique', 'Détoxification'],
+    name: 'Dr. Salma Kabbaj',
+    role: 'Cardiologue',
+    bio: "Passionnée par la prévention cardiovasculaire et le bien-être global.",
+    image: '/team/female2.jpg',
+    specialties: ['Cardiologie', 'Prévention', 'Éducation santé'],
+  },
+  {
+    id: 4,
+    name: 'Dr. Mehdi Othmani',
+    role: 'Biologiste médical',
+    bio: "Garant de la qualité des analyses et de la confidentialité des résultats.",
+    image: '/team/male2.jpg',
+    specialties: ['Biologie médicale', 'Analyses', 'Qualité'],
+  },
+  {
+    id: 5,
+    name: 'Nadia Lahlou',
+    role: 'Infirmière coordinatrice',
+    bio: "Au cœur du parcours patient, elle assure un accompagnement humain et rassurant.",
+    image: '/team/female3.jpg',
+    specialties: ['Soins infirmiers', 'Coordination', 'Écoute'],
+  },
+  {
+    id: 6,
+    name: 'Dr. Amine Idrissi',
+    role: 'Psychologue clinicien',
+    bio: "Spécialiste du soutien psychologique et de l'accompagnement thérapeutique.",
+    image: '/team/male3.jpg',
+    specialties: ['Psychologie', 'Thérapie', 'Accompagnement'],
+  },
+  {
+    id: 7,
+    name: 'Dr. Imane Bennis',
+    role: 'Nutritionniste',
+    bio: "Conseils nutritionnels personnalisés pour une santé durable.",
+    image: '/team/female4.jpg',
+    specialties: ['Nutrition', 'Éducation alimentaire', 'Prévention'],
   },
 ];
 
@@ -100,8 +132,10 @@ const Team = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                     <div>
-                      <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                      <p className="text-primary-200">{member.role}</p>
+                      <h3 className="text-xl font-bold text-white drop-shadow-lg">{member.name}</h3>
+                      <span className="inline-block mt-1 px-3 py-1 rounded-lg bg-black/50 text-white font-semibold text-base drop-shadow shadow-md">
+                        {member.role}
+                      </span>
                     </div>
                   </div>
                 </div>

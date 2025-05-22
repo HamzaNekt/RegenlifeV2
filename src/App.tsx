@@ -13,10 +13,7 @@ import UrologieStemCellTherapy from './pages/services/urologie/StemCellTherapy';
 import UrologiePRPTherapy from './pages/services/urologie/PRPTherapy';
 import UrologiePeptideTherapy from './pages/services/urologie/PeptideTherapy';
 import UrologieCellTherapy from './pages/services/urologie/CellTherapy';
-
-// Import des pages de services Gynécologie
-import Gynecologie from './pages/services/gynecologie/index';
-
+import CancerProstate from './pages/services/urologie/cancer-prostate';
 
 // Import des pages de services Traumatologie
 import Traumatologie from './pages/services/traumatologie/index';
@@ -60,12 +57,40 @@ import BienEtreFeminin from './pages/services/women/services/bien-etre-feminin';
 import TherapieDeCouple from './pages/services/women/services/therapie-de-couple';
 import EducationSante from './pages/services/women/services/education-sante';
 import WomenServicesIndex from './pages/services/women/services/index';
-import Sexologie from './pages/services/sexologie';
-import SexologieDepistage from './pages/services/sexologie/Depistage';
-import TherapieSexuelle from './pages/services/sexologie/TherapieSexuelle';
-import Cardiologie from './pages/services/cardiologie';
+import Sexologie from './pages/services/sexologie/index';
+import ConsultationSexologique from './pages/services/sexologie/consultation';
+import TherapieCouple from './pages/services/sexologie/therapie-couple';
+import EducationSexuelle from './pages/services/sexologie/education';
+import TroublesSexuels from './pages/services/sexologie/troubles';
+import SanteSexuelle from './pages/services/sexologie/sante';
+import Depistage from './pages/services/sexologie/Depistage';
+
+// Import des pages de services Cardiologie
+import Cardiologie from './pages/services/cardiologie/index';
+import ConsultationCardiologique from './pages/services/cardiologie/consultation';
+import EchographieCardiaque from './pages/services/cardiologie/echographie';
+import SuiviCardiaque from './pages/services/cardiologie/suivi';
+import PreventionCardiaque from './pages/services/cardiologie/prevention';
+import ReadaptationCardiaque from './pages/services/cardiologie/readaptation';
+import UrgencesCardiaques from './pages/services/cardiologie/urgences';
+
+// Import des pages de services ORL
 import ORL from './pages/services/orl';
-import MedecinePreventive from './pages/services/medecine-preventive';
+import ConsultationORL from './pages/services/orl/consultation';
+import Audiometrie from './pages/services/orl/audiometrie';
+import Endoscopie from './pages/services/orl/endoscopie';
+import ChirurgieORL from './pages/services/orl/chirurgie';
+import TroublesSommeil from './pages/services/orl/troubles-sommeil';
+import Vertiges from './pages/services/orl/vertiges';
+
+// Import des pages de services Médecine Préventive
+import MedecinePreventive from './pages/services/medecine-preventive/index';
+import BilanSante from './pages/services/medecine-preventive/bilan';
+import Vaccinations from './pages/services/medecine-preventive/vaccinations';
+import DepistagePreventif from './pages/services/medecine-preventive/depistage';
+import ConseilsNutrition from './pages/services/medecine-preventive/nutrition';
+import ActivitePhysique from './pages/services/medecine-preventive/activite-physique';
+import SuiviPersonnalise from './pages/services/medecine-preventive/suivi-personnalise';
 
 function App() {
   const location = useLocation();
@@ -92,9 +117,7 @@ function App() {
           <Route path="/services/urologie/prp-therapy" element={<UrologiePRPTherapy />} />
           <Route path="/services/urologie/peptide-therapy" element={<UrologiePeptideTherapy />} />
           <Route path="/services/urologie/cell-therapy" element={<UrologieCellTherapy />} />
-
-          {/* Routes Gynécologie */}
-          <Route path="/services/gynecologie" element={<Gynecologie />} />
+          <Route path="/services/urologie/cancer-prostate" element={<CancerProstate />} />
 
 
           {/* Routes Traumatologie */}
@@ -139,13 +162,41 @@ function App() {
           <Route path="/services/women/services/therapie-de-couple" element={<TherapieDeCouple />} />
           <Route path="/services/women/services/education-sante" element={<EducationSante />} />
 
-          {/* Services standards manquants */}
+          {/* Routes Sexologie */}
           <Route path="/services/sexologie" element={<Sexologie />} />
-          <Route path="/services/sexologie/depistage" element={<SexologieDepistage />} />
-          <Route path="/services/sexologie/therapie-sexuelle" element={<TherapieSexuelle />} />
+          <Route path="/services/sexologie/consultation" element={<ConsultationSexologique />} />
+          <Route path="/services/sexologie/therapie-couple" element={<TherapieCouple />} />
+          <Route path="/services/sexologie/education" element={<EducationSexuelle />} />
+          <Route path="/services/sexologie/troubles" element={<TroublesSexuels />} />
+          <Route path="/services/sexologie/sante" element={<SanteSexuelle />} />
+          <Route path="/services/sexologie/depistage" element={<Depistage />} />
+
+          {/* Routes Cardiologie */}
           <Route path="/services/cardiologie" element={<Cardiologie />} />
+          <Route path="/services/cardiologie/consultation" element={<ConsultationCardiologique />} />
+          <Route path="/services/cardiologie/echographie" element={<EchographieCardiaque />} />
+          <Route path="/services/cardiologie/suivi" element={<SuiviCardiaque />} />
+          <Route path="/services/cardiologie/prevention" element={<PreventionCardiaque />} />
+          <Route path="/services/cardiologie/readaptation" element={<ReadaptationCardiaque />} />
+          <Route path="/services/cardiologie/urgences" element={<UrgencesCardiaques />} />
+
+          {/* Routes ORL */}
           <Route path="/services/orl" element={<ORL />} />
+          <Route path="/services/orl/consultation" element={<ConsultationORL />} />
+          <Route path="/services/orl/audiometrie" element={<Audiometrie />} />
+          <Route path="/services/orl/endoscopie" element={<Endoscopie />} />
+          <Route path="/services/orl/chirurgie" element={<ChirurgieORL />} />
+          <Route path="/services/orl/troubles-sommeil" element={<TroublesSommeil />} />
+          <Route path="/services/orl/vertiges" element={<Vertiges />} />
+
+          {/* Routes Médecine Préventive */}
           <Route path="/services/medecine-preventive" element={<MedecinePreventive />} />
+          <Route path="/services/medecine-preventive/bilan" element={<BilanSante />} />
+          <Route path="/services/medecine-preventive/vaccinations" element={<Vaccinations />} />
+          <Route path="/services/medecine-preventive/depistage" element={<DepistagePreventif />} />
+          <Route path="/services/medecine-preventive/nutrition" element={<ConseilsNutrition />} />
+          <Route path="/services/medecine-preventive/activite-physique" element={<ActivitePhysique />} />
+          <Route path="/services/medecine-preventive/suivi-personnalise" element={<SuiviPersonnalise />} />
 
           <Route path="/appointment" element={<Appointment />} />
         </Routes>

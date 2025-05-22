@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiUserCheck, FiFeather, FiRefreshCw, FiHeart, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
+import { FiArrowRight, FiHeadphones, FiActivity, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const Depistage: React.FC = () => {
+const Audiometrie: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -17,10 +17,10 @@ const Depistage: React.FC = () => {
             className="text-white max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Dépistage
+              Audiométrie
             </h1>
             <p className="text-xl mb-8">
-              Tests de dépistage effectués dans un cadre confidentiel et professionnel, garantissant votre discrétion et votre bien-être.
+              Évaluation précise de votre audition avec des équipements de pointe et des professionnels qualifiés.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -46,28 +46,28 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Qu'est-ce que le Dépistage ?
+              Qu'est-ce que l'Audiométrie ?
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Notre service de dépistage offre des tests rapides et fiables dans un environnement sécurisé et confidentiel. Nous garantissons votre anonymat et votre confort tout au long du processus.
+              L'audiométrie est un examen qui permet d'évaluer précisément votre capacité auditive. Grâce à des tests spécifiques et des équipements modernes, nous pouvons mesurer votre seuil d'audition et identifier d'éventuels troubles auditifs.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Confidentialité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Test Précis</h3>
                 <p className="text-gray-700">
-                  Tests effectués dans le plus grand respect de votre vie privée et de votre anonymat.
+                  Évaluation détaillée de votre audition dans différentes fréquences.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Rapidité</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Résultats Immédiats</h3>
                 <p className="text-gray-700">
-                  Résultats rapides et fiables, avec un accompagnement professionnel.
+                  Analyse rapide et explication claire des résultats obtenus.
                 </p>
               </motion.div>
             </div>
@@ -84,7 +84,7 @@ const Depistage: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Avantages du Dépistage
+              Avantages de l'Audiométrie
             </h2>
             <div className="space-y-6">
               <motion.div 
@@ -93,9 +93,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Discrétion Totale</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Équipement de Pointe</h3>
                   <p className="text-gray-700">
-                    Entrée discrète et accueil confidentiel pour préserver votre intimité.
+                    Utilisation d'audiomètres de dernière génération pour des mesures précises.
                   </p>
                 </div>
               </motion.div>
@@ -105,9 +105,9 @@ const Depistage: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Accompagnement</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Expertise Professionnelle</h3>
                   <p className="text-gray-700">
-                    Soutien professionnel avant, pendant et après le test.
+                    Tests réalisés par des audiologistes qualifiés et expérimentés.
                   </p>
                 </div>
               </motion.div>
@@ -132,22 +132,22 @@ const Depistage: React.FC = () => {
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tests Rapides</h3>
-                <p className="text-gray-700">Résultats en quelques minutes pour une tranquillité immédiate</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Audiométrie Tonale</h3>
+                <p className="text-gray-700">Mesure des seuils d'audition pour différentes fréquences</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Consultation</h3>
-                <p className="text-gray-700">Entretien confidentiel avec un professionnel de santé</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Audiométrie Vocale</h3>
+                <p className="text-gray-700">Évaluation de la compréhension de la parole</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi</h3>
-                <p className="text-gray-700">Accompagnement personnalisé selon vos besoins</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tympanométrie</h3>
+                <p className="text-gray-700">Analyse de la fonction de l'oreille moyenne</p>
               </motion.div>
             </div>
           </motion.div>
@@ -173,8 +173,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiMapPin className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Entrée Discrète</h3>
-                <p className="text-gray-700">Accès discret et confidentiel à nos locaux</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Stationnement</h3>
+                <p className="text-gray-700">Parking gratuit disponible pour votre confort</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -184,7 +184,7 @@ const Depistage: React.FC = () => {
                   <FiTruck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport discret disponible sur demande</p>
+                <p className="text-gray-700">Service de transport disponible sur demande</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
@@ -193,8 +193,8 @@ const Depistage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <FiHome className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Salle d'Attente</h3>
-                <p className="text-gray-700">Espace d'attente privé et confortable</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Accueil</h3>
+                <p className="text-gray-700">Salle d'attente confortable et accueil personnalisé</p>
               </motion.div>
             </div>
           </motion.div>
@@ -203,10 +203,10 @@ const Depistage: React.FC = () => {
         {/* Back Button */}
         <div className="text-center">
           <Link 
-            to="/services/sexologie"
+            to="/services/orl"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
           >
-            Retour aux Services de Sexologie
+            Retour aux Services ORL
           </Link>
         </div>
       </div>
@@ -214,4 +214,4 @@ const Depistage: React.FC = () => {
   );
 };
 
-export default Depistage; 
+export default Audiometrie; 
