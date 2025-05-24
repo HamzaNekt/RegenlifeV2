@@ -1,40 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiHeart, FiSmile, FiActivity, FiBook, FiArrowRight } from 'react-icons/fi';
+import { FiHeart, FiSmile, FiActivity, FiBook, FiArrowRight, FiUsers, FiBookOpen } from 'react-icons/fi';
+import LoadingSpinner from '../../../../components/LoadingSpinner';
 
 const womenServices = [
   {
-    icon: <FiHeart className="w-8 h-8" />,
+    id: 'consultation-gynecologique',
     title: 'Consultation Gynécologique',
-    description: 'Des consultations personnalisées pour votre santé féminine.',
-    path: '/services/women/services/consultation-gynecologique',
+    description: 'Consultations personnalisées pour votre santé féminine.',
+    path: '/services/women/consultation-gynecologique',
+    icon: <FiHeart className="h-6 w-6" />,
     color: 'from-pink-500 to-pink-600'
   },
   {
-    icon: <FiSmile className="w-8 h-8" />,
+    id: 'therapie-de-couple',
+    title: 'Thérapie de Couple',
+    description: 'Accompagnement pour améliorer votre relation de couple.',
+    path: '/services/women/therapie-de-couple',
+    icon: <FiUsers className="h-6 w-6" />,
+    color: 'from-purple-500 to-purple-600'
+  },
+  {
+    id: 'bien-etre-feminin',
     title: 'Bien-être Féminin',
-    description: 'Des solutions pour votre bien-être au quotidien.',
-    path: '/services/women/services/bien-etre-feminin',
+    description: 'Services dédiés à votre bien-être physique et mental.',
+    path: '/services/women/bien-etre-feminin',
+    icon: <FiActivity className="h-6 w-6" />,
     color: 'from-rose-500 to-rose-600'
   },
   {
-    icon: <FiActivity className="w-8 h-8" />,
-    title: 'Thérapie de Couple',
-    description: 'Soutien psychologique pour les couples.',
-    path: '/services/women/services/therapie-de-couple',
-    color: 'from-fuchsia-500 to-fuchsia-600'
-  },
-  {
-    icon: <FiBook className="w-8 h-8" />,
+    id: 'education-sante',
     title: 'Éducation à la Santé',
-    description: 'Formation et information sur la santé féminine.',
-    path: '/services/women/services/education-sante',
-    color: 'from-purple-500 to-purple-600'
-  },
+    description: 'Informations et conseils pour votre santé au quotidien.',
+    path: '/services/women/education-sante',
+    icon: <FiBookOpen className="h-6 w-6" />,
+    color: 'from-fuchsia-500 to-fuchsia-600'
+  }
 ];
 
 const WomenServicesIndex: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

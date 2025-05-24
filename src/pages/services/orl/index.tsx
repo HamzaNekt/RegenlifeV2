@@ -1,65 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import { FaEarListen, FaHeadSideCough, FaLungs, FaBed, FaUser, FaWeightScale } from 'react-icons/fa6';
+import { FiArrowRight, FiHeadphones, FiActivity, FiClipboard, FiDroplet, FiCalendar, FiShield } from 'react-icons/fi';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const orlServices = [
   {
-    id: 'consultation-orl',
+    id: 'consultation',
     title: 'Consultation ORL',
-    description: "Évaluation complète des troubles de l'oreille, du nez et de la gorge.",
+    description: 'Évaluation complète de vos problèmes ORL par nos spécialistes.',
     path: '/services/orl/consultation',
-    icon: <FaEarListen className="h-6 w-6" />,
-    color: 'from-teal-500 to-teal-600'
+    icon: <FiClipboard className="h-6 w-6" />,
+    color: 'from-blue-500 to-blue-600'
   },
   {
     id: 'audiometrie',
     title: 'Audiométrie',
-    description: "Tests auditifs complets pour évaluer votre capacité auditive.",
+    description: 'Tests auditifs complets pour évaluer votre audition.',
     path: '/services/orl/audiometrie',
-    icon: <FaHeadSideCough className="h-6 w-6" />,
-    color: 'from-cyan-500 to-cyan-600'
+    icon: <FiHeadphones className="h-6 w-6" />,
+    color: 'from-indigo-500 to-indigo-600'
   },
   {
     id: 'endoscopie',
     title: 'Endoscopie',
-    description: "Examens endoscopiques pour visualiser les voies aériennes supérieures.",
+    description: 'Examens endoscopiques pour diagnostiquer les problèmes ORL.',
     path: '/services/orl/endoscopie',
-    icon: <FaLungs className="h-6 w-6" />,
+    icon: <FiActivity className="h-6 w-6" />,
+    color: 'from-cyan-500 to-cyan-600'
+  },
+  {
+    id: 'chirurgie',
+    title: 'Chirurgie ORL',
+    description: 'Interventions chirurgicales pour traiter les problèmes ORL.',
+    path: '/services/orl/chirurgie',
+    icon: <FiShield className="h-6 w-6" />,
     color: 'from-sky-500 to-sky-600'
   },
   {
-    id: 'chirurgie-orl',
-    title: 'Chirurgie ORL',
-    description: "Interventions chirurgicales pour traiter les pathologies ORL.",
-    path: '/services/orl/chirurgie',
-    icon: <FaUser className="h-6 w-6" />,
+    id: 'vertiges',
+    title: 'Traitement des Vertiges',
+    description: 'Diagnostic et traitement des troubles de l\'équilibre.',
+    path: '/services/orl/vertiges',
+    icon: <FiActivity className="h-6 w-6" />,
     color: 'from-blue-500 to-blue-600'
   },
   {
     id: 'troubles-sommeil',
     title: 'Troubles du Sommeil',
-    description: "Diagnostic et traitement des troubles respiratoires du sommeil.",
-    path: '/services/orl/sommeil',
-    icon: <FaBed className="h-6 w-6" />,
+    description: 'Évaluation et traitement des troubles du sommeil liés à l\'ORL.',
+    path: '/services/orl/troubles-sommeil',
+    icon: <FiCalendar className="h-6 w-6" />,
     color: 'from-indigo-500 to-indigo-600'
-  },
-  {
-    id: 'vertiges',
-    title: 'Vertiges',
-    description: "Évaluation et traitement des troubles de l'équilibre.",
-    path: '/services/orl/vertiges',
-    icon: <FaWeightScale className="h-6 w-6" />,
-    color: 'from-violet-500 to-violet-600'
   }
 ];
 
 const ORL: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-teal-600 to-teal-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-teal-600 to-teal-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
@@ -135,6 +154,29 @@ const ORL: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-teal-600 to-teal-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-teal-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-teal-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

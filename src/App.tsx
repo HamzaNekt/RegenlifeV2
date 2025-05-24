@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Appointment from './pages/Appointment';
+
 
 // Import des pages de services Urologie
 import Urologie from './pages/services/urologie/index';
@@ -34,6 +34,7 @@ import ChirurgiePlastiqueNextBeautyAesthetics from './pages/services/chirurgie-p
 import Radiologie from './pages/services/radiologie/index';
 import RadiologieABPM from './pages/services/radiologie/ABPM';
 import RadiologieServices from './pages/services/radiologie/RadiologyServices';
+import IRMCorpsEntierPreventive from './pages/services/radiologie/IRMCorpsEntierPreventive';
 
 // Import des pages de services Biologie
 import Biologie from './pages/services/biologie/index';
@@ -43,6 +44,7 @@ import BiologieEBOOTherapy from './pages/services/biologie/EBOOTherapy';
 import BiologieTherapeuticPlasmaExchange from './pages/services/biologie/TherapeuticPlasmaExchange';
 import BiologieVitaminShots from './pages/services/biologie/VitaminShots';
 import BiologieAdvancedMedicalServices from './pages/services/biologie/AdvancedMedicalServices';
+import PrelevementsAnalysesPreventives from './pages/services/biologie/PrelevementsAnalysesPreventives';
 
 // Import des pages de services Paramédicales
 import Kinesitherapie from './pages/services/paramediacle/kinesitherapie';
@@ -139,6 +141,7 @@ function App() {
           <Route path="/services/radiologie" element={<Radiologie />} />
           <Route path="/services/radiologie/abpm" element={<RadiologieABPM />} />
           <Route path="/services/radiologie/radiology-services" element={<RadiologieServices />} />
+          <Route path="/services/radiologie/irm-corps-entier-preventive" element={<IRMCorpsEntierPreventive />} />
 
           {/* Routes Biologie */}
           <Route path="/services/biologie" element={<Biologie />} />
@@ -148,6 +151,7 @@ function App() {
           <Route path="/services/biologie/therapeutic-plasma-exchange" element={<BiologieTherapeuticPlasmaExchange />} />
           <Route path="/services/biologie/vitamin-shots" element={<BiologieVitaminShots />} />
           <Route path="/services/biologie/advanced-medical-services" element={<BiologieAdvancedMedicalServices />} />
+          <Route path="/services/biologie/prelevements-analyses-preventives" element={<PrelevementsAnalysesPreventives />} />
 
           {/* Routes Paramédicales */}
           <Route path="/services/paramediacle/kinesitherapie" element={<Kinesitherapie />} />
@@ -198,7 +202,7 @@ function App() {
           <Route path="/services/medecine-preventive/activite-physique" element={<ActivitePhysique />} />
           <Route path="/services/medecine-preventive/suivi-personnalise" element={<SuiviPersonnalise />} />
 
-          <Route path="/appointment" element={<Appointment />} />
+        
         </Routes>
       </main>
       <Footer gynecoTheme={isGyneco || isWomenService} />

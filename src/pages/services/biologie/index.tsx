@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiBatteryCharging, FiWind, FiDroplet, FiRefreshCw, FiActivity, FiSearch } from 'react-icons/fi';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const biologyServices = [
   {
@@ -51,14 +52,41 @@ const biologyServices = [
     path: '/services/biologie/advanced-medical-services',
     icon: <FiSearch className="h-6 w-6" />,
     color: 'from-purple-500 to-purple-600'
+  },
+  {
+    id: 'prelevements-analyses-preventives',
+    title: 'Prélèvements & Analyses Préventives',
+    description: 'Prélèvements et analyses pour les maladies à dépister et le suivi des taux dans le cadre de la médecine préventive.',
+    path: '/services/biologie/prelevements-analyses-preventives',
+    icon: <FiDroplet className="h-6 w-6" />,
+    color: 'from-teal-500 to-teal-600'
   }
 ];
 
 const Biologie: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiActivity, FiHeart, FiUserCheck, FiSearch, FiAlertCircle, FiRefreshCw } from 'react-icons/fi';
 import { FaHeartbeat, FaStethoscope, FaProcedures, FaRunning, FaRegHospital, FaUserMd } from 'react-icons/fa';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const cardiologieServices = [
   {
@@ -56,10 +57,29 @@ const cardiologieServices = [
 ];
 
 const Cardiologie: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
@@ -135,6 +155,29 @@ const Cardiologie: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-blue-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheckCircle, FiSearch, FiUser, FiPhone, FiInfo, FiHeart, FiActivity, FiShield, FiAlertCircle, FiChevronDown } from 'react-icons/fi';
 import prostateImg from '../../../media/prostate.jpg';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const faqs = [
   {
@@ -60,11 +61,29 @@ const traitements = [
 
 const CancerProstate: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[48vh] flex items-center justify-center bg-gradient-to-r from-blue-800 to-blue-600 overflow-hidden">
+      <section className="relative h-[48vh] flex items-center justify-center bg-gradient-to-r from-blue-800 to-blue-600 overflow-hidden pt-32">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Prostate Hero" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/80" />
         <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">

@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiUserCheck, FiFeather, FiRefreshCw, FiHeart, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { FiArrowRight, FiCheckCircle, FiMapPin, FiTruck, FiHome, FiActivity } from 'react-icons/fi';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 
-const ActivitePhysique: React.FC = () => {
+const IRMCorpsEntierPreventive: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simuler un temps de chargement
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
+    const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -37,15 +32,16 @@ const ActivitePhysique: React.FC = () => {
             className="text-white max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Activité Physique
+              IRM Corps Entier Préventive
             </h1>
             <p className="text-xl mb-8">
-              Un programme d'activité physique personnalisé pour améliorer votre santé et votre bien-être.
+              Un examen d'imagerie complet pour dépister les maladies avant l'apparition des symptômes et optimiser votre prévention santé.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              onClick={() => window.location.href = '/contact'}
             >
               Prendre Rendez-vous
               <FiArrowRight className="w-5 h-5" />
@@ -56,7 +52,7 @@ const ActivitePhysique: React.FC = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Description Section */}
+        {/* What is IRM Corps Entier Préventive Section */}
         <section className="mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,28 +62,28 @@ const ActivitePhysique: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Qu'est-ce que notre Programme d'Activité Physique ?
+              Qu'est-ce que l'IRM Corps Entier Préventive ?
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Notre programme d'activité physique vous offre un accompagnement personnalisé pour améliorer votre condition physique et votre santé. Notre approche est adaptée à votre niveau et à vos objectifs.
+              L'IRM corps entier préventive est une technique d'imagerie avancée permettant de visualiser l'ensemble des organes et tissus pour détecter précocement des anomalies ou maladies, avant tout symptôme.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Objectifs</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Dépistage Précoce</h3>
                 <p className="text-gray-700">
-                  Améliorer votre condition physique et votre santé globale.
+                  Détection des maladies à un stade précoce, avant l'apparition de symptômes.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Méthode</h3>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Examen Complet</h3>
                 <p className="text-gray-700">
-                  Programme personnalisé adapté à votre niveau et à vos objectifs.
+                  Visualisation de l'ensemble des organes et tissus pour une prévention globale.
                 </p>
               </motion.div>
             </div>
@@ -104,7 +100,7 @@ const ActivitePhysique: React.FC = () => {
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Avantages de notre Programme
+              Avantages de l'IRM Préventive
             </h2>
             <div className="space-y-6">
               <motion.div 
@@ -113,9 +109,9 @@ const ActivitePhysique: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Programme Personnalisé</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnostic Précis</h3>
                   <p className="text-gray-700">
-                    Exercices adaptés à votre niveau et à vos objectifs.
+                    Imagerie de haute résolution pour repérer les anomalies invisibles cliniquement.
                   </p>
                 </div>
               </motion.div>
@@ -125,9 +121,9 @@ const ActivitePhysique: React.FC = () => {
               >
                 <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Suivi Régulier</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Prévention Personnalisée</h3>
                   <p className="text-gray-700">
-                    Accompagnement continu pour maintenir votre motivation.
+                    Adaptation du suivi et des conseils selon les résultats de l'IRM.
                   </p>
                 </div>
               </motion.div>
@@ -152,22 +148,22 @@ const ActivitePhysique: React.FC = () => {
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Évaluation Initiale</h3>
-                <p className="text-gray-700">Bilan de votre condition physique</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">IRM Corps Entier</h3>
+                <p className="text-gray-700">Examen complet pour dépistage multi-organes.</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Programme d'Exercices</h3>
-                <p className="text-gray-700">Exercices adaptés à vos besoins</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Analyse Personnalisée</h3>
+                <p className="text-gray-700">Interprétation par un radiologue expert et conseils adaptés.</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi et Coaching</h3>
-                <p className="text-gray-700">Accompagnement personnalisé</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi Préventif</h3>
+                <p className="text-gray-700">Recommandations pour un suivi médical personnalisé.</p>
               </motion.div>
             </div>
           </motion.div>
@@ -219,19 +215,9 @@ const ActivitePhysique: React.FC = () => {
             </div>
           </motion.div>
         </section>
-
-        {/* Back Button */}
-        <div className="text-center">
-          <Link 
-            to="/services/medecine-preventive"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
-          >
-            Retour aux Services de Médecine Préventive
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default ActivitePhysique; 
+export default IRMCorpsEntierPreventive; 

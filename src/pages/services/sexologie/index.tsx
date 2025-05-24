@@ -1,65 +1,85 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import { FaVenusMars, FaHeart, FaUserFriends, FaTransgender, FaBookOpen, FaHandHoldingHeart } from 'react-icons/fa';
+import { FiArrowRight, FiHeart, FiUsers, FiBook, FiActivity, FiUserCheck, FiSearch } from 'react-icons/fi';
+import { FaVenusMars, FaHeart as FaHeartIcon, FaUserFriends, FaTransgender, FaBookOpen, FaHandHoldingHeart } from 'react-icons/fa';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const sexologieServices = [
   {
-    id: 'consultation-sexologique',
-    title: 'Consultation Sexologique',
-    description: "Évaluation et accompagnement personnalisé pour les problématiques de santé sexuelle.",
+    id: 'consultation',
+    title: 'Consultation',
+    description: 'Un espace confidentiel pour discuter de vos préoccupations et recevoir des conseils personnalisés.',
     path: '/services/sexologie/consultation',
-    icon: <FaVenusMars className="h-6 w-6" />,
-    color: 'from-pink-500 to-pink-600'
+    icon: <FiHeart className="h-6 w-6" />,
+    color: 'from-blue-500 to-blue-600'
   },
   {
     id: 'therapie-couple',
     title: 'Thérapie de Couple',
-    description: "Accompagnement professionnel pour améliorer l'intimité et la communication.",
+    description: 'Accompagnement professionnel pour améliorer la communication et l\'intimité dans votre relation.',
     path: '/services/sexologie/therapie-couple',
-    icon: <FaUserFriends className="h-6 w-6" />,
-    color: 'from-rose-500 to-rose-600'
+    icon: <FiUsers className="h-6 w-6" />,
+    color: 'from-indigo-500 to-indigo-600'
   },
   {
-    id: 'education-sexuelle',
+    id: 'education',
     title: 'Éducation Sexuelle',
-    description: "Informations et conseils pour une sexualité saine et épanouie.",
+    description: 'Informations et conseils pour une meilleure compréhension de la sexualité et du bien-être.',
     path: '/services/sexologie/education',
-    icon: <FaBookOpen className="h-6 w-6" />,
-    color: 'from-fuchsia-500 to-fuchsia-600'
+    icon: <FiBook className="h-6 w-6" />,
+    color: 'from-cyan-500 to-cyan-600'
   },
   {
-    id: 'troubles-sexuels',
-    title: 'Troubles Sexuels',
-    description: "Diagnostic et traitement des dysfonctions sexuelles.",
-    path: '/services/sexologie/troubles',
-    icon: <FaHeart className="h-6 w-6" />,
+    id: 'sante',
+    title: 'Santé Sexuelle',
+    description: 'Conseils et suivi pour maintenir une bonne santé sexuelle et prévenir les problèmes.',
+    path: '/services/sexologie/sante',
+    icon: <FiActivity className="h-6 w-6" />,
     color: 'from-purple-500 to-purple-600'
   },
   {
-    id: 'sante-sexuelle',
-    title: 'Santé Sexuelle',
-    description: "Prévention et suivi de la santé sexuelle globale.",
-    path: '/services/sexologie/sante',
-    icon: <FaHandHoldingHeart className="h-6 w-6" />,
-    color: 'from-violet-500 to-violet-600'
+    id: 'troubles',
+    title: 'Troubles Sexuels',
+    description: 'Diagnostic et traitement des troubles sexuels pour améliorer votre qualité de vie.',
+    path: '/services/sexologie/troubles',
+    icon: <FiUserCheck className="h-6 w-6" />,
+    color: 'from-pink-500 to-pink-600'
   },
   {
     id: 'depistage',
     title: 'Dépistage',
-    description: "Tests de dépistage en toute discrétion et confidentialité.",
+    description: 'Services de dépistage confidentiels pour votre santé sexuelle.',
     path: '/services/sexologie/depistage',
-    icon: <FaTransgender className="h-6 w-6" />,
-    color: 'from-indigo-500 to-indigo-600'
+    icon: <FiSearch className="h-6 w-6" />,
+    color: 'from-red-500 to-red-600'
   }
 ];
 
 const Sexologie: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-pink-600 to-pink-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-pink-600 to-pink-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
@@ -135,6 +155,29 @@ const Sexologie: React.FC = () => {
                 </motion.div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-pink-600 to-pink-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-pink-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-pink-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>

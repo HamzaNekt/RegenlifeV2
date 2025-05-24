@@ -1,32 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiActivity, FiRadio } from 'react-icons/fi';
+import { FiArrowRight, FiActivity, FiHeart, FiDroplet } from 'react-icons/fi';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
-const radiologyServices = [
+const radiologieServices = [
   {
-    id: 'abpm',
-    title: 'ABPM',
-    description: 'Analyse avancée de la pression artérielle pour un diagnostic précis des conditions cardiovasculaires.',
-    path: '/services/radiologie/abpm',
+    id: 'radiology-services',
+    title: 'Services de Radiologie',
+    description: 'Examens d\'imagerie médicale de pointe pour un diagnostic précis.',
+    path: '/services/radiologie/radiology-services',
     icon: <FiActivity className="h-6 w-6" />,
     color: 'from-blue-500 to-blue-600'
   },
   {
-    id: 'radiology-services',
-    title: 'Services de Radiologie',
-    description: 'Techniques d\'imagerie avancées pour un diagnostic précis et des traitements ciblés.',
-    path: '/services/radiologie/radiology-services',
-    icon: <FiRadio className="h-6 w-6" />,
+    id: 'abpm',
+    title: 'ABPM',
+    description: 'Mesure ambulatoire de la pression artérielle sur 24 heures.',
+    path: '/services/radiologie/abpm',
+    icon: <FiHeart className="h-6 w-6" />,
     color: 'from-indigo-500 to-indigo-600'
+  },
+  {
+    id: 'irm-corps-entier-preventive',
+    title: 'IRM Corps Entier Préventive',
+    description: 'IRM corps entier pour dépistage des maladies avant apparition des symptômes.',
+    path: '/services/radiologie/irm-corps-entier-preventive',
+    icon: <FiActivity className="h-6 w-6" />,
+    color: 'from-teal-500 to-teal-600'
   }
 ];
 
 const Radiologie: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
@@ -61,7 +89,7 @@ const Radiologie: React.FC = () => {
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {radiologyServices.map((service, index) => (
+            {radiologieServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}

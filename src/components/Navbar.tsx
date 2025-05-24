@@ -57,6 +57,39 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  // Fonction pour bloquer le scroll du body
+  useEffect(() => {
+    if (activeDropdown) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeDropdown]);
+
+  // Fonction pour gérer l'ouverture/fermeture des sous-menus
+  const handleDropdownToggle = (label: string) => {
+    if (activeDropdown === label) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(label);
+    }
+  };
+
+  // Ajout de la fonction pour gérer le scroll
+  const handleSubmenuScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    const isAtBottom = target.scrollHeight - target.scrollTop === target.clientHeight;
+    const isAtTop = target.scrollTop === 0;
+
+    if ((isAtBottom && e.deltaY > 0) || (isAtTop && e.deltaY < 0)) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
+
   const serviceDropdowns = [
     {
       label: 'Urologie',
@@ -618,7 +651,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-24 z-40 md:hidden"
+            className="fixed inset-x-0 top-24 z-40 md:hidden h-[calc(100vh-6rem)]"
           >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -629,7 +662,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 isScrolled
                   ? 'bg-white/90 backdrop-blur-lg'
                   : 'bg-black/50 backdrop-blur-lg'
-              } shadow-xl`}
+              } shadow-xl h-full`}
             >
               <div className="px-4 pt-3 pb-6 space-y-3">
                 {/* Accueil */}
@@ -651,7 +684,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 <div className="relative">
                   <motion.button
                     onClick={() => {
-                      setActiveDropdown(activeDropdown === 'Services' ? null : 'Services');
+                      handleDropdownToggle('Services');
                     }}
                     className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 flex items-center justify-between ${
                       isScrolled
@@ -669,14 +702,14 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="pl-6 space-y-1"
+                      className="pl-6 space-y-1 max-h-[50vh] overflow-y-auto custom-scrollbar"
+                      onWheel={handleSubmenuScroll}
                     >
                       {serviceDropdowns.map((item) => (
                         <div key={item.label} className="relative">
                           <motion.button
                             onClick={() => {
-                              navigate(item.path);
-                              setIsOpen(false);
+                              handleDropdownToggle(item.label);
                             }}
                             className={`w-full text-left px-4 py-3 rounded-lg text-lg font-bold transition-colors duration-300 flex items-center justify-between ${
                               isScrolled
@@ -689,7 +722,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                               <span
                                 onClick={e => {
                                   e.stopPropagation();
-                                  setActiveDropdown(activeDropdown === item.label ? null : item.label);
+                                  handleDropdownToggle(item.label);
                                 }}
                                 className="ml-2 cursor-pointer"
                               >
@@ -704,7 +737,8 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="pl-6 space-y-1"
+                              className="pl-6 space-y-1 max-h-[50vh] overflow-y-auto custom-scrollbar"
+                              onWheel={handleSubmenuScroll}
                             >
                               {item.subMenu.map((subItem: any) => (
                                 <motion.a

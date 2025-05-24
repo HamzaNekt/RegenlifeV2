@@ -1,65 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import { FaUserCheck, FaSyringe, FaVial, FaAppleAlt, FaRunning, FaUserMd } from 'react-icons/fa';
+import { FiArrowRight, FiHeart, FiActivity, FiClipboard, FiDroplet, FiCalendar, FiShield } from 'react-icons/fi';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
-const medecinePreventiveServices = [
+const preventiveServices = [
   {
-    id: 'bilan-sante',
-    title: 'Bilan de Santé',
-    description: "Évaluation complète de votre état de santé et dépistage précoce.",
+    id: 'bilan',
+    title: 'Bilan de Santé Complet',
+    description: 'Évaluation approfondie de votre état de santé pour une prévention optimale.',
     path: '/services/medecine-preventive/bilan',
-    icon: <FaUserCheck className="h-6 w-6" />,
+    icon: <FiClipboard className="h-6 w-6" />,
+    color: 'from-blue-500 to-blue-600'
+  },
+  {
+    id: 'depistage',
+    title: 'Dépistage Précoce',
+    description: 'Détection précoce des facteurs de risque et des maladies pour une intervention rapide.',
+    path: '/services/medecine-preventive/depistage',
+    icon: <FiShield className="h-6 w-6" />,
+    color: 'from-indigo-500 to-indigo-600'
+  },
+  {
+    id: 'nutrition',
+    title: 'Conseils Nutritionnels',
+    description: 'Guidance personnalisée pour une alimentation équilibrée et adaptée à vos besoins.',
+    path: '/services/medecine-preventive/nutrition',
+    icon: <FiDroplet className="h-6 w-6" />,
+    color: 'from-cyan-500 to-cyan-600'
+  },
+  {
+    id: 'activite-physique',
+    title: 'Activité Physique',
+    description: 'Programmes d\'exercices adaptés pour maintenir une bonne condition physique.',
+    path: '/services/medecine-preventive/activite-physique',
+    icon: <FiActivity className="h-6 w-6" />,
+    color: 'from-sky-500 to-sky-600'
+  },
+  {
+    id: 'suivi-personnalise',
+    title: 'Suivi Personnalisé',
+    description: 'Accompagnement continu pour maintenir et améliorer votre santé.',
+    path: '/services/medecine-preventive/suivi-personnalise',
+    icon: <FiHeart className="h-6 w-6" />,
     color: 'from-blue-500 to-blue-600'
   },
   {
     id: 'vaccinations',
     title: 'Vaccinations',
-    description: "Programme de vaccination personnalisé selon votre profil.",
+    description: 'Protection contre les maladies infectieuses par des vaccinations appropriées.',
     path: '/services/medecine-preventive/vaccinations',
-    icon: <FaSyringe className="h-6 w-6" />,
-    color: 'from-green-500 to-green-600'
-  },
-  {
-    id: 'depistage',
-    title: 'Dépistage',
-    description: "Tests de dépistage pour la prévention des maladies.",
-    path: '/services/medecine-preventive/depistage',
-    icon: <FaVial className="h-6 w-6" />,
-    color: 'from-purple-500 to-purple-600'
-  },
-  {
-    id: 'conseils-nutrition',
-    title: 'Conseils Nutrition',
-    description: "Accompagnement pour une alimentation saine et équilibrée.",
-    path: '/services/medecine-preventive/nutrition',
-    icon: <FaAppleAlt className="h-6 w-6" />,
-    color: 'from-red-500 to-red-600'
-  },
-  {
-    id: 'activite-physique',
-    title: 'Activité Physique',
-    description: "Recommandations pour une activité physique adaptée.",
-    path: '/services/medecine-preventive/activite-physique',
-    icon: <FaRunning className="h-6 w-6" />,
-    color: 'from-yellow-500 to-yellow-600'
-  },
-  {
-    id: 'suivi-personnalise',
-    title: 'Suivi Personnalisé',
-    description: "Accompagnement continu pour maintenir une bonne santé.",
-    path: '/services/medecine-preventive/suivi-personnalise',
-    icon: <FaUserMd className="h-6 w-6" />,
+    icon: <FiCalendar className="h-6 w-6" />,
     color: 'from-indigo-500 to-indigo-600'
   }
 ];
 
 const MedecinePreventive: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+      <section className="relative h-[45vh] bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center pt-32">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
@@ -94,7 +113,7 @@ const MedecinePreventive: React.FC = () => {
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {medecinePreventiveServices.map((service, index) => (
+            {preventiveServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -135,6 +154,29 @@ const MedecinePreventive: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Prêt à prendre soin de votre santé ?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Notre équipe est à votre écoute pour vous accompagner, vous informer et vous proposer un suivi personnalisé. Prenez rendez-vous ou contactez-nous pour toute question.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-blue-50 hover:shadow-xl transition-shadow duration-300"
+            >
+              Prendre Rendez-vous
+              <FiArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>
