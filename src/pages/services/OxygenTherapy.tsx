@@ -10,9 +10,7 @@ const OxygenTherapy = () => {
   const navigate = useNavigate();
 
   const handleAppointmentClick = () => {
-    navigate('/appointment', { 
-      state: { serviceName: 'Thérapie Hyperbare' }
-    });
+    navigate('/contact', { state: { specialite: 'Oxygénothérapie', service: 'Thérapie Hyperbare' } });
   };
 
   return (

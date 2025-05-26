@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiHeart, FiSmile, FiActivity, FiBook, FiArrowRight, FiUsers, FiBookOpen } from 'react-icons/fi';
 import LoadingSpinner from '../../../../components/LoadingSpinner';
 
@@ -9,7 +9,7 @@ const womenServices = [
     id: 'consultation-gynecologique',
     title: 'Consultation Gynécologique',
     description: 'Consultations personnalisées pour votre santé féminine.',
-    path: '/services/women/consultation-gynecologique',
+    path: '/services/women/services/consultation-gynecologique',
     icon: <FiHeart className="h-6 w-6" />,
     color: 'from-pink-500 to-pink-600'
   },
@@ -17,7 +17,7 @@ const womenServices = [
     id: 'therapie-de-couple',
     title: 'Thérapie de Couple',
     description: 'Accompagnement pour améliorer votre relation de couple.',
-    path: '/services/women/therapie-de-couple',
+    path: '/services/women/services/therapie-de-couple',
     icon: <FiUsers className="h-6 w-6" />,
     color: 'from-purple-500 to-purple-600'
   },
@@ -25,7 +25,7 @@ const womenServices = [
     id: 'bien-etre-feminin',
     title: 'Bien-être Féminin',
     description: 'Services dédiés à votre bien-être physique et mental.',
-    path: '/services/women/bien-etre-feminin',
+    path: '/services/women/services/bien-etre-feminin',
     icon: <FiActivity className="h-6 w-6" />,
     color: 'from-rose-500 to-rose-600'
   },
@@ -33,7 +33,7 @@ const womenServices = [
     id: 'education-sante',
     title: 'Éducation à la Santé',
     description: 'Informations et conseils pour votre santé au quotidien.',
-    path: '/services/women/education-sante',
+    path: '/services/women/services/education-sante',
     icon: <FiBookOpen className="h-6 w-6" />,
     color: 'from-fuchsia-500 to-fuchsia-600'
   }
@@ -41,6 +41,7 @@ const womenServices = [
 
 const WomenServicesIndex: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simuler un temps de chargement
@@ -155,6 +156,7 @@ const WomenServicesIndex: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact', { state: { specialite: 'Services Féminins', service: 'Générique' } })}
               className="bg-white text-pink-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-pink-50 hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous

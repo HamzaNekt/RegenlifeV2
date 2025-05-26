@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiHeadphones, FiActivity, FiClipboard, FiDroplet, FiCalendar, FiShield } from 'react-icons/fi';
 import LoadingSpinner from '../../../components/LoadingSpinner';
@@ -57,6 +57,7 @@ const orlServices = [
 
 const ORL: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simuler un temps de chargement
@@ -171,6 +172,7 @@ const ORL: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact', { state: { specialite: 'orl', service: 'Générique' } })}
               className="bg-white text-teal-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-teal-50 hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous

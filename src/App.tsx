@@ -93,6 +93,11 @@ import DepistagePreventif from './pages/services/medecine-preventive/depistage';
 import ConseilsNutrition from './pages/services/medecine-preventive/nutrition';
 import ActivitePhysique from './pages/services/medecine-preventive/activite-physique';
 import SuiviPersonnalise from './pages/services/medecine-preventive/suivi-personnalise';
+import DepistageGastro from './pages/services/medecine-preventive/depistage-gastro';
+
+// Import des pages de services Soins Etrangers
+import SoinsEtrangers from './pages/services/soins-etrangers/index';
+import InstallationRetraite from './pages/services/installation-retraite/index';
 
 function App() {
   const location = useLocation();
@@ -201,6 +206,11 @@ function App() {
           <Route path="/services/medecine-preventive/nutrition" element={<ConseilsNutrition />} />
           <Route path="/services/medecine-preventive/activite-physique" element={<ActivitePhysique />} />
           <Route path="/services/medecine-preventive/suivi-personnalise" element={<SuiviPersonnalise />} />
+          <Route path="/services/medecine-preventive/depistage-gastro" element={<DepistageGastro />} />
+
+          {/* Routes Soins Etrangers */}
+          <Route path="/services/soins-etrangers" element={<SoinsEtrangers />} />
+          <Route path="/services/installation-retraite" element={<InstallationRetraite />} />
 
         
         </Routes>

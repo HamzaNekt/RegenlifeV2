@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheckCircle, FiSearch, FiUser, FiPhone, FiInfo, FiHeart, FiActivity, FiShield, FiAlertCircle, FiChevronDown } from 'react-icons/fi';
 import prostateImg from '../../../media/prostate.jpg';
@@ -62,6 +62,7 @@ const traitements = [
 const CancerProstate: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simuler un temps de chargement
@@ -103,9 +104,14 @@ const CancerProstate: React.FC = () => {
           >
             Le cancer masculin le plus fréquent au Maroc. Un dépistage précoce et un accompagnement personnalisé optimisent vos chances de guérison.
           </motion.p>
-          <Link to="/contact" className="inline-flex items-center bg-white text-blue-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-50 transition-all duration-300 text-lg">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/contact', { state: { specialite: 'urologie', service: 'Cancer de la Prostate' } })}
+            className="inline-flex items-center bg-white text-blue-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-50 transition-all duration-300 text-lg"
+          >
             Prendre rendez-vous <FiArrowRight className="ml-2" />
-          </Link>
+          </motion.button>
         </div>
       </section>
 
@@ -275,9 +281,14 @@ const CancerProstate: React.FC = () => {
           <div className="bg-blue-50 rounded-2xl shadow p-6 text-center">
             <div className="text-blue-800 font-semibold mb-2">Un accompagnement global</div>
             <div className="text-gray-700 text-sm mb-2">Suivi médical régulier, gestion des effets secondaires, soutien psychologique et familial, groupes de parole au Maroc.</div>
-            <Link to="/contact" className="inline-flex items-center bg-blue-700 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-800 transition-all duration-300 mt-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact', { state: { specialite: 'urologie', service: 'Cancer de la Prostate' } })}
+              className="inline-flex items-center bg-blue-700 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-800 transition-all duration-300 mt-2"
+            >
               Prendre rendez-vous <FiArrowRight className="ml-2" />
-            </Link>
+            </motion.button>
           </div>
         </div>
       </section>

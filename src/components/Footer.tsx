@@ -15,6 +15,8 @@ const Footer = ({ gynecoTheme = false }) => {
               <li><a href="/services/paramediacle" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Paramédical</a></li>
               <li><a href="/services/cardiologie" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Cardiologie</a></li>
               <li><a href="/services/medecine-preventive" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Médecine Préventive</a></li>
+              <li><a href="/services/soins-etrangers" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Soins Etrangers</a></li>
+              <li><a href="/services/installation-retraite" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Installation & Retraite</a></li>
             </ul>
             <ul className="space-y-2">
               <li><a href="/services/women/services/index" className={`${gynecoTheme ? 'text-pink-600 hover:text-pink-800' : 'text-gray-400 hover:text-primary'} transition-colors`}>Services Féminins</a></li>
@@ -29,16 +31,12 @@ const Footer = ({ gynecoTheme = false }) => {
           <h3 className={`text-xl font-bold mb-4 ${gynecoTheme ? 'text-pink-700' : 'text-white'}`}>Contact</h3>
           <ul className="space-y-2">
             <li className={`${gynecoTheme ? 'text-pink-700' : 'text-gray-400'} flex items-center`}>
-              <FiMapPin className="text-primary mr-2" />
-              123 Avenue de la Santé, 75001 Paris
-            </li>
-            <li className={`${gynecoTheme ? 'text-pink-700' : 'text-gray-400'} flex items-center`}>
               <FiPhone className="text-primary mr-2" />
-              +33 1 23 45 67 89
+              +212 7 74 77 93 85
             </li>
             <li className={`${gynecoTheme ? 'text-pink-700' : 'text-gray-400'} flex items-center`}>
               <FiMail className="text-primary mr-2" />
-              contact@menhealth.fr
+              regenlifemaroc@gmail.com
             </li>
           </ul>
         </div>

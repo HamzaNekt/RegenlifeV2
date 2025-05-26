@@ -1,7 +1,8 @@
 import React, { useState, ReactElement } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiUser, FiMail, FiPhone, FiCalendar, FiClock, FiMessageSquare, FiSend, FiArrowLeft } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 const bgImg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80";
 
@@ -15,15 +16,47 @@ const Contact: React.FC = () => {
     time: '',
     notes: ''
   });
-
+  const [feedback, setFeedback] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [hoveredField, setHoveredField] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Récupérer specialite et service depuis l'URL ou le state
+  let specialite = '';
+  let service = '';
+  if (location.state && (location.state as any).specialite) {
+    specialite = (location.state as any).specialite;
+    service = (location.state as any).service;
+  } else if (location.search) {
+    const params = new URLSearchParams(location.search);
+    specialite = params.get('specialite') || '';
+    service = params.get('service') || '';
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formState);
+    setSending(true);
+    setFeedback(null);
+    try {
+      // TODO: Remplacer par vos propres IDs EmailJS
+      const SERVICE_ID = 'service_9eyymid';
+      const TEMPLATE_ID = 'template_79pqpv3';
+      const PUBLIC_KEY = 'WZK5vSxKdFNelINWl';
+      const templateParams = {
+        ...formState,
+        specialite,
+        service
+      };
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      setFeedback('Votre message a bien été envoyé. Nous vous répondrons rapidement.');
+      setFormState({ firstName: '', lastName: '', email: '', phone: '', date: '', time: '', notes: '' });
+    } catch (err) {
+      setFeedback("Une erreur s'est produite. Veuillez réessayer plus tard.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -162,6 +195,8 @@ const Contact: React.FC = () => {
           </motion.h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            <input type="hidden" name="specialite" value={specialite} />
+            <input type="hidden" name="service" value={service} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {renderInput({
                 name: 'firstName',
@@ -246,27 +281,20 @@ const Contact: React.FC = () => {
               />
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="flex justify-center"
+            {/* Feedback utilisateur */}
+            {feedback && (
+              <div className={`text-center font-semibold ${feedback.startsWith('Votre') ? 'text-green-600' : 'text-red-600'}`}>{feedback}</div>
+            )}
+            <motion.button
+              type="submit"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-bold text-lg shadow-lg hover:bg-blue-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={sending}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
-              <motion.button
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 10px 15px -3px rgba(59, 130, 246, 0.3)"
-                }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 shadow-lg hover:bg-blue-700 transition-all duration-200"
-              >
-                <motion.span whileHover={{ rotate: 15 }} className="inline-block">
-                  <FiSend className="w-5 h-5" />
-                </motion.span>
-                Prendre rendez-vous
-              </motion.button>
-            </motion.div>
+              <FiSend className="w-5 h-5" />
+              {sending ? 'Envoi en cours...' : 'Envoyer'}
+            </motion.button>
           </form>
         </motion.div>
       </motion.div>

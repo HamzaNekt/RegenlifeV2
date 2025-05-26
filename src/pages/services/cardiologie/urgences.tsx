@@ -45,6 +45,7 @@ const UrgencesCardiaques: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => window.location.href = 'tel:0774779385'}
               className="bg-white text-red-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               Appeler les Urgences

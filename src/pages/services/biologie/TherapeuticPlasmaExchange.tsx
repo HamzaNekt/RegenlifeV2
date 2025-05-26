@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheckCircle, FiMapPin, FiTruck, FiHome } from 'react-icons/fi';
 import LoadingSpinner from '../../../components/LoadingSpinner';
+import { useNavigate } from 'react-router-dom';
 
 const TherapeuticPlasmaExchange = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simuler un temps de chargement
@@ -44,6 +46,7 @@ const TherapeuticPlasmaExchange = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact', { state: { specialite: 'biologie', service: 'Échange Plasmatique Thérapeutique' } })}
               className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous
@@ -237,6 +240,7 @@ const TherapeuticPlasmaExchange = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/contact', { state: { specialite: 'biologie', service: 'Échange Plasmatique Thérapeutique' } })}
               className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous
