@@ -89,13 +89,6 @@ const Hero = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 text-lg font-semibold bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Prendre rendez-vous
-            </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() => navigate('services/oxygen-therapy')}
               className="px-8 py-3 text-lg font-semibold bg-white text-primary rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
