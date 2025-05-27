@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+// Import des pages du Forum
+import Forum from './pages/forum/index';
+import ArticlePage from './pages/forum/article/[id]';
 
 // Import des pages de services Urologie
 import Urologie from './pages/services/urologie/index';
@@ -212,7 +215,9 @@ function App() {
           <Route path="/services/soins-etrangers" element={<SoinsEtrangers />} />
           <Route path="/services/installation-retraite" element={<InstallationRetraite />} />
 
-        
+          {/* Routes du Forum */}
+          <Route path="/forum" element={<Forum />} />
+          <Route path="/forum/article/:id" element={<ArticlePage />} />
         </Routes>
       </main>
       <Footer gynecoTheme={isGyneco || isWomenService} />

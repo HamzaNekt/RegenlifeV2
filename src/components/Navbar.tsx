@@ -590,6 +590,18 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
               >
                 À propos
               </motion.button>
+
+              {/* Forum */}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => navigate('/forum')}
+                className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
+                  isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
+                }`}
+              >
+                Forum
+              </motion.button>
             </div>
 
             {/* Button - Right */}
@@ -791,6 +803,21 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                   }`}
                 >
                   À propos
+                </motion.button>
+
+                {/* Forum */}
+                <motion.button
+                  onClick={() => {
+                    navigate('/forum');
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-3 rounded-lg text-xl font-bold transition-colors duration-300 ${
+                    isScrolled
+                      ? 'text-gray-800 hover:bg-gray-50 hover:text-primary'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                >
+                  Forum
                 </motion.button>
 
                 {/* Bouton RDV */}

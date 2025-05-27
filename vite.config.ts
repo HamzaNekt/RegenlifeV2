@@ -8,4 +8,5 @@ export default defineConfig({
     outDir: 'dist'
   },
   base: '/',
+  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
 })
