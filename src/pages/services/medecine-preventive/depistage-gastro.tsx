@@ -72,7 +72,7 @@ const DepistageGastro: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden pt-32" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="relative h-[90vh] pt-22 flex items-center overflow-hidden" style={{ backgroundImage: 'url(/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-2xl mx-auto px-4 text-center flex flex-col items-center justify-center h-full">
           <motion.h1

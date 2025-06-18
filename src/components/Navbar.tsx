@@ -440,7 +440,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0 cursor-pointer flex items-center pl-20"
+            className="flex-shrink-0 cursor-pointer flex items-center pl-2"
               onClick={() => navigate('/')}
             >
               <img
