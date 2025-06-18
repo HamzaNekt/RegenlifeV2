@@ -11,7 +11,7 @@ export interface Article {
 }
 
 // Imports d'images et d'icônes pour les nouveaux articles
-import oxyChambreHisar from '../assets/articles/oxy_chambre_hisar.jpg';
+// import oxyChambreHisar from '../assets/articles/oxy_chambre_hisar.jpg';
 import iconeOxygene from '../assets/icons/icone_oxygene.png';
 import iconeSecurite from '../assets/icons/icone_securite.png';
 import preparationPatient from '../assets/articles/preparation_patient.jpg';
@@ -50,7 +50,7 @@ export const articles: Article[] = [
     excerpt: "L'oxygénothérapie hyperbare (OTH) consiste à inhaler de l'oxygène pur sous pression, augmentant jusqu'à 20 fois la quantité d'oxygène dans le sang et les tissus. Découvrez ses indications, son déroulement et les spécificités du centre Hisar Hospital.",
     content: `
       <div style='text-align:center;margin-bottom:2em;'>
-        <img src="${oxyChambreHisar}" alt="Chambre hyperbare moderne" style="max-width:420px;width:100%;border-radius:1em;box-shadow:0 4px 24px #0001;margin-bottom:1em;" />
+        <!-- <img src="" alt="Chambre hyperbare moderne" style="max-width:420px;width:100%;border-radius:1em;box-shadow:0 4px 24px #0001;margin-bottom:1em;" /> -->
       </div>
       <p>L'oxygénothérapie hyperbare (OTH) est une technique médicale avancée qui consiste à faire respirer à un patient de l'oxygène pur à 100% dans une chambre de pression, à une pression 2 à 3 fois supérieure à la pression atmosphérique normale. Ce traitement innovant permet d'augmenter considérablement la quantité d'oxygène dissous dans le sang et les tissus, favorisant ainsi la guérison, la régénération cellulaire et la lutte contre certaines infections.</p>
       <hr style="margin:2em 0;"/>
