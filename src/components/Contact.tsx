@@ -67,21 +67,21 @@ const Contact: React.FC = () => {
   };
 
   const inputClasses = (fieldName: string) => `
-    w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 
+    w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 font-['Montserrat']
     ${focusedField === fieldName 
-      ? 'border-blue-500 shadow-md shadow-blue-100' 
+      ? 'border-[#D1A24C] shadow-md shadow-[#D1A24C]/20' 
       : hoveredField === fieldName
-        ? 'border-blue-300'
-        : 'border-gray-200'
+        ? 'border-[#c4bcb4]'
+        : 'border-[#c4bcb4]'
     }
-    focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200
-    bg-white
+    focus:outline-none focus:border-[#D1A24C] focus:ring-2 focus:ring-[#D1A24C]/20
+    bg-white text-[#2e333f] placeholder-[#c4bcb4]
   `;
 
   const iconVariants = {
-    initial: { scale: 1, color: '#9CA3AF' },
-    hover: { scale: 1.1, color: '#3B82F6', transition: { duration: 0.2 } },
-    focused: { scale: 1.1, color: '#2563EB', transition: { duration: 0.2 } }
+    initial: { scale: 1, color: '#c4bcb4' },
+    hover: { scale: 1.1, color: '#D1A24C', transition: { duration: 0.2 } },
+    focused: { scale: 1.1, color: '#D1A24C', transition: { duration: 0.2 } }
   };
 
   const inputWrapperVariants = {
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
       onHoverEnd={() => setHoveredField(null)}
     >
       <motion.div 
-        className="absolute left-3 top-3.5 text-gray-400"
+        className="absolute left-3 top-3.5"
         variants={iconVariants}
         animate={
           focusedField === fieldConfig.name 
@@ -159,14 +159,24 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-32 pb-12 overflow-hidden bg-gradient-to-b from-blue-400 to-blue-800">
-      {/* Blobs SVG blancs flous en fond */}
-      <svg className="absolute -top-24 -left-24 w-[350px] h-[350px] z-0 blur-[60px] opacity-30" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="250" cy="250" rx="250" ry="200" fill="white" />
+    <div className="relative min-h-screen pt-32 pb-12 overflow-hidden bg-[#1c2431]">
+      {/* Hero Section avec image de fond et overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bgImg})` }}
+        />
+        <div className="absolute inset-0 bg-[#1c2431]/80 backdrop-blur-sm" />
+      </div>
+
+      {/* Blobs SVG dorés flous en fond */}
+      <svg className="absolute -top-24 -left-24 w-[350px] h-[350px] z-0 blur-[60px] opacity-20" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="250" cy="250" rx="250" ry="200" fill="#D1A24C" />
       </svg>
-      <svg className="absolute -bottom-24 -right-24 w-[350px] h-[350px] z-0 blur-[60px] opacity-20" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="250" cy="250" rx="250" ry="200" fill="white" />
+      <svg className="absolute -bottom-24 -right-24 w-[350px] h-[350px] z-0 blur-[60px] opacity-15" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="250" cy="250" rx="250" ry="200" fill="#D1A24C" />
       </svg>
+
       <motion.div 
         className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10"
         variants={containerVariants}
@@ -176,17 +186,18 @@ const Contact: React.FC = () => {
         <motion.button
           variants={itemVariants}
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 mb-8 px-4 py-2 bg-white/80 border border-blue-400 rounded-full shadow-md text-blue-700 font-semibold transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 z-20"
+          className="flex items-center gap-2 mb-8 px-6 py-3 bg-white/10 backdrop-blur-md border border-[#D1A24C]/30 rounded-full shadow-lg text-[#D1A24C] font-['Montserrat'] font-semibold transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 hover:bg-[#D1A24C]/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#D1A24C]/50 z-20"
         >
           <FiArrowLeft className="w-5 h-5" />
           <span className="text-lg">Retour</span>
         </motion.button>
+
         <motion.div 
           variants={itemVariants}
-          className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 backdrop-blur-sm backdrop-filter"
+          className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 sm:p-12 border border-[#D1A24C]/20"
         >
           <motion.h2 
-            className="text-3xl font-bold text-center mb-8 text-gray-900"
+            className="text-4xl font-bold text-center mb-8 text-[#2e333f] font-['Montserrat']"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -258,7 +269,7 @@ const Contact: React.FC = () => {
               onHoverEnd={() => setHoveredField(null)}
             >
               <motion.div 
-                className="absolute left-3 top-3.5 text-gray-400"
+                className="absolute left-3 top-3.5"
                 variants={iconVariants}
                 animate={
                   focusedField === 'notes' 
@@ -283,14 +294,14 @@ const Contact: React.FC = () => {
 
             {/* Feedback utilisateur */}
             {feedback && (
-              <div className={`text-center font-semibold ${feedback.startsWith('Votre') ? 'text-green-600' : 'text-red-600'}`}>{feedback}</div>
+              <div className={`text-center font-semibold font-['Montserrat'] ${feedback.startsWith('Votre') ? 'text-green-600' : 'text-red-600'}`}>{feedback}</div>
             )}
             <motion.button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-bold text-lg shadow-lg hover:bg-blue-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-gradient-to-r from-[#D1A24C] to-[#c4bcb4] text-white font-['Montserrat'] font-bold text-lg shadow-lg hover:shadow-xl hover:from-[#c4bcb4] hover:to-[#D1A24C] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed transform hover:scale-105"
               disabled={sending}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <FiSend className="w-5 h-5" />
               {sending ? 'Envoi en cours...' : 'Envoyer'}

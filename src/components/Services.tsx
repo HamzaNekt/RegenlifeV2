@@ -346,7 +346,7 @@ const Services = () => {
   });
 
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-gray-100 py-20" ref={ref}>
+    <section className="min-h-screen flex items-center bg-[#1c2431] py-20" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header */}
         <motion.div
@@ -355,10 +355,10 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-montserrat">
+          <h2 className="text-4xl font-bold mb-4 font-montserrat text-[#D1A24C]">
             Nos Spécialités
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-montserrat">
+          <p className="text-xl max-w-3xl mx-auto font-montserrat text-[#c4bcb4]">
             Découvrez nos pôles d'expertise médicale et accédez à l'ensemble de nos services par spécialité.
           </p>
         </motion.div>
@@ -371,18 +371,18 @@ const Services = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -8, boxShadow: '0 8px 32px rgba(0,0,0,0.12)' }}
-              className={`rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full w-full flex flex-col items-center justify-center ${spec.color}`}
+              className="rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full w-full flex flex-col items-center justify-center bg-[#2e333f] text-white"
             >
               <Link
                 to={spec.path}
                 className="block h-full w-full flex flex-col items-center justify-center py-16 px-8 group text-center"
                 aria-label={`Découvrir la spécialité ${spec.name}`}
               >
-                <div className={`flex items-center justify-center rounded-full shadow-lg mb-8 ${spec.iconBg} w-24 h-24 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="flex items-center justify-center rounded-full shadow-lg mb-8" style={{ background: '#c4bcb4', width: '6rem', height: '6rem' }}>
                   {spec.icon}
                 </div>
-                <h3 className="text-2xl font-semibold font-montserrat mb-4 text-gray-900 group-hover:text-primary group-hover:underline">{spec.name}</h3>
-                <span className="inline-flex items-center text-primary font-medium font-montserrat mt-auto">
+                <h3 className="text-2xl font-semibold font-montserrat mb-4 text-white group-hover:text-[#D1A24C] group-hover:underline">{spec.name}</h3>
+                <span className="inline-flex items-center font-medium font-montserrat mt-auto text-[#c4bcb4] group-hover:text-[#D1A24C] transition-colors duration-200">
                   Accéder
                   <FiArrowRight className="ml-2" />
                 </span>

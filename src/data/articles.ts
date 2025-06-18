@@ -54,7 +54,7 @@ export const articles: Article[] = [
       </div>
       <p>L'oxygénothérapie hyperbare (OTH) est une technique médicale avancée qui consiste à faire respirer à un patient de l'oxygène pur à 100% dans une chambre de pression, à une pression 2 à 3 fois supérieure à la pression atmosphérique normale. Ce traitement innovant permet d'augmenter considérablement la quantité d'oxygène dissous dans le sang et les tissus, favorisant ainsi la guérison, la régénération cellulaire et la lutte contre certaines infections.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeOxygene}" alt="Oxygène" style="width:24px;"/> Qu'est-ce que l'OTH&nbsp;?</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeOxygene}" alt="Oxygène" style="width:24px;"/> Qu'est-ce que l'OTH&nbsp;?</h2>
       <p>L'OTH repose sur un principe simple : en augmentant la pression ambiante et en faisant respirer de l'oxygène pur, on multiplie la quantité d'oxygène transportée par le sang. Cela permet d'atteindre des tissus mal irrigués, d'accélérer la cicatrisation et de stimuler les défenses naturelles de l'organisme.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Augmentation de l'oxygénation des tissus</li>
@@ -62,7 +62,7 @@ export const articles: Article[] = [
         <li>Stimulation de la production de collagène et de facteurs de croissance</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeOxygene}" alt="Oxygène" style="width:24px;"/> Pour quelles maladies&nbsp;?</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeOxygene}" alt="Oxygène" style="width:24px;"/> Pour quelles maladies&nbsp;?</h2>
       <p>L'OTH est indiquée dans de nombreuses pathologies, notamment :</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Plaies diabétiques et cicatrisation difficile</li>
@@ -74,7 +74,7 @@ export const articles: Article[] = [
         <li>Brûlures, abcès cérébral, inflammations osseuses persistantes</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSecurite}" alt="Sécurité" style="width:24px;"/> Caractéristiques du système Hisar</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSecurite}" alt="Sécurité" style="width:24px;"/> Caractéristiques du système Hisar</h2>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Chambre hyperbare spacieuse et moderne, pouvant accueillir jusqu'à 12 patients simultanément</li>
         <li>Équipement de sécurité conforme aux normes internationales</li>
@@ -84,8 +84,8 @@ export const articles: Article[] = [
         <li>Approche multidisciplinaire pour une prise en charge globale</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">Questions fréquentes</h2>
-      <h3 style="color:#2563eb; font-size:1.1rem; margin-bottom:0.3em;">Comment se déroule une séance&nbsp;?</h3>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">Questions fréquentes</h2>
+      <h3 style="color:#D1A24C; font-size:1.1rem; margin-bottom:0.3em;">Comment se déroule une séance&nbsp;?</h3>
       <ol style="margin-bottom:1.5em; padding-left:1.5em; list-style:decimal;">
         <li>Le patient s'installe dans la chambre de pression, sur un siège confortable ou une civière.</li>
         <li>La pression est progressivement augmentée (sensation comparable à un décollage en avion).</li>
@@ -93,13 +93,13 @@ export const articles: Article[] = [
         <li>La séance dure généralement entre 1,5 et 2 heures.</li>
         <li>Après la séance, la pression est ramenée à la normale en douceur.</li>
       </ol>
-      <h3 style="color:#2563eb; font-size:1.1rem; margin-bottom:0.3em;">Quels sont les effets ressentis&nbsp;?</h3>
+      <h3 style="color:#D1A24C; font-size:1.1rem; margin-bottom:0.3em;">Quels sont les effets ressentis&nbsp;?</h3>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Sensation de pression dans les oreilles (comme en avion)</li>
         <li>Fatigue légère ou sensation de bien-être après la séance</li>
         <li>Amélioration progressive des symptômes selon la pathologie</li>
       </ul>
-      <h3 style="color:#2563eb; font-size:1.1rem; margin-bottom:0.3em;">Effets secondaires et précautions</h3>
+      <h3 style="color:#D1A24C; font-size:1.1rem; margin-bottom:0.3em;">Effets secondaires et précautions</h3>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Effets secondaires rares : barotraumatisme, claustrophobie, myopie passagère</li>
         <li>Il est important de signaler tout antécédent médical avant le traitement</li>
@@ -107,7 +107,7 @@ export const articles: Article[] = [
         <li>Porter des vêtements confortables en coton</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>L'oxygénothérapie hyperbare, telle que pratiquée au centre Hisar Hospital, offre une solution innovante et sécurisée pour de nombreuses pathologies. Son efficacité est renforcée par un environnement hospitalier moderne, une équipe spécialisée et une prise en charge globale du patient. Pour toute question ou indication, n'hésitez pas à consulter un professionnel de santé qualifié.</p>
     `,
     author: 'Équipe Regenlife',
@@ -125,7 +125,7 @@ export const articles: Article[] = [
       </div>
       <p>Bien se préparer à une séance d'oxygénothérapie hyperbare (OTH) est essentiel pour garantir le confort, la sécurité et l'efficacité du traitement. Voici un guide complet pour aborder sereinement chaque étape, de la préparation à la récupération.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeChecklist}" alt="Checklist" style="width:24px;"/> Avant la séance</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeChecklist}" alt="Checklist" style="width:24px;"/> Avant la séance</h2>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Évitez d'appliquer des produits inflammables (parfum, crème grasse, laque, etc.).</li>
         <li>Portez des vêtements amples et en coton, sans éléments métalliques.</li>
@@ -134,7 +134,7 @@ export const articles: Article[] = [
         <li>Retirez bijoux, montres, appareils électroniques avant d'entrer dans la chambre.</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">Pendant la séance</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">Pendant la séance</h2>
       <ol style="margin-bottom:1.5em; padding-left:1.5em; list-style:decimal;">
         <li>Installez-vous confortablement sur le siège ou la civière prévue.</li>
         <li>La pression augmente progressivement: vous pouvez ressentir une pression dans les oreilles (comme en avion).</li>
@@ -143,24 +143,24 @@ export const articles: Article[] = [
         <li>Profitez des options multimédia (musique, films) pour vous détendre.</li>
       </ol>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">Après la séance</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">Après la séance</h2>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Hydratez-vous bien après la séance.</li>
         <li>Reprenez vos activités calmement, évitez les efforts intenses immédiats.</li>
         <li>Signalez tout effet secondaire inhabituel (fatigue excessive, vertiges, etc.).</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">Questions fréquentes</h2>
-      <h3 style="color:#2563eb; font-size:1.1rem; margin-bottom:0.3em;">Combien de temps dure la séance?</h3>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">Questions fréquentes</h2>
+      <h3 style="color:#D1A24C; font-size:1.1rem; margin-bottom:0.3em;">Combien de temps dure la séance?</h3>
       <p>En général, une séance dure entre 1h30 et 2h, selon la pathologie et le protocole.</p>
-      <h3 style="color:#2563eb; font-size:1.1rem; margin-bottom:0.3em;">Quels effets secondaires possibles?</h3>
+      <h3 style="color:#D1A24C; font-size:1.1rem; margin-bottom:0.3em;">Quels effets secondaires possibles?</h3>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Sensation de pression dans les oreilles (à équilibrer en avalant ou en bâillant).</li>
         <li>Fatigue légère, maux de tête passagers.</li>
         <li>Effets secondaires rares: barotraumatisme, claustrophobie.</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>Une bonne préparation et une communication avec l'équipe médicale sont les clés d'une séance d'OTH réussie. N'hésitez pas à poser toutes vos questions avant, pendant et après le traitement pour vivre cette expérience en toute sérénité.</p>
     `,
     author: 'Équipe Regenlife',
@@ -178,7 +178,7 @@ export const articles: Article[] = [
       </div>
       <p>L'oxygénothérapie hyperbare (OTH) est une thérapie reconnue internationalement pour ses nombreux bénéfices dans le traitement de pathologies complexes. Découvrez les indications, le déroulement d'une séance, les risques et les résultats attendus selon la Mayo Clinic.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Indications médicales</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Indications médicales</h2>
       <p>L'OTH est utilisée dans la prise en charge de&nbsp;:</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Embolie gazeuse (présence de bulles d'air dans la circulation sanguine)</li>
@@ -187,7 +187,7 @@ export const articles: Article[] = [
         <li>Lésions dues aux radiations ou à l'écrasement</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Déroulement d'une séance</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Déroulement d'une séance</h2>
       <ol style="margin-bottom:1.5em; padding-left:1.5em; list-style:decimal;">
         <li>Le patient s'installe dans une chambre pressurisée, seul ou en groupe.</li>
         <li>La pression est augmentée progressivement, sous surveillance médicale.</li>
@@ -196,7 +196,7 @@ export const articles: Article[] = [
         <li>Après la séance, la pression est ramenée à la normale lentement.</li>
       </ol>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSecurite}" alt="Sécurité" style="width:24px;"/> Risques et effets secondaires</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSecurite}" alt="Sécurité" style="width:24px;"/> Risques et effets secondaires</h2>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Barotraumatisme des oreilles ou des sinus (pression à équilibrer)</li>
         <li>Claustrophobie (peur des espaces clos)</li>
@@ -205,14 +205,14 @@ export const articles: Article[] = [
       </ul>
       <p>Un examen médical préalable est indispensable pour limiter les risques et adapter le protocole à chaque patient.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Résultats attendus</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Résultats attendus</h2>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Amélioration de la cicatrisation des plaies et brûlures</li>
         <li>Réduction des infections et des douleurs chroniques</li>
         <li>Meilleure oxygénation des tissus et récupération plus rapide</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>L'OTH, selon la Mayo Clinic, est une solution efficace et sûre pour de nombreuses pathologies, à condition d'être bien encadrée médicalement. N'hésitez pas à consulter un spécialiste pour toute indication ou question.</p>
     `,
     author: 'Équipe Regenlife',
@@ -230,7 +230,7 @@ export const articles: Article[] = [
       </div>
       <p>La fatigue persistante, même après une bonne nuit de sommeil, est un problème fréquent. L'alimentation joue un rôle clé pour retrouver de l'énergie au quotidien. Découvrez les conseils d'une diététicienne et les aliments à privilégier pour booster votre vitalité.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeEnergie}" alt="Énergie" style="width:24px;"/> Pourquoi suis-je fatigué&nbsp;?</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeEnergie}" alt="Énergie" style="width:24px;"/> Pourquoi suis-je fatigué&nbsp;?</h2>
       <p>La fatigue peut avoir de multiples causes&nbsp;: stress, manque de sommeil, carences, alimentation déséquilibrée, sédentarité… Il est important d'identifier la cause pour agir efficacement.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Manque de fer, magnésium ou vitamines</li>
@@ -239,7 +239,7 @@ export const articles: Article[] = [
         <li>Rythme de vie irrégulier</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Les aliments à privilégier</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Les aliments à privilégier</h2>
       <p>Certains aliments sont de véritables alliés pour retrouver de l'énergie&nbsp;:</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Fruits frais (banane, orange, kiwi…)</li>
@@ -250,7 +250,7 @@ export const articles: Article[] = [
         <li>Légumineuses (lentilles, pois chiches, haricots rouges)</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Conseils pratiques</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Conseils pratiques</h2>
       <ol style="margin-bottom:1.5em; padding-left:1.5em; list-style:decimal;">
         <li>Hydratez-vous régulièrement tout au long de la journée.</li>
         <li>Privilégiez les repas équilibrés et variés.</li>
@@ -259,7 +259,7 @@ export const articles: Article[] = [
         <li>Pratiquez une activité physique adaptée à votre forme.</li>
       </ol>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>Une alimentation saine, variée et adaptée à vos besoins est la clé pour retrouver de l'énergie durablement. N'hésitez pas à consulter un professionnel de santé ou une diététicienne en cas de fatigue persistante.</p>
     `,
     author: 'Équipe Regenlife',
@@ -277,7 +277,7 @@ export const articles: Article[] = [
       </div>
       <p>La fréquence de vos selles, souvent appelée « poop clock », est un indicateur précieux de votre santé digestive. Comprendre ce rythme et savoir reconnaître les signaux d'alerte permet de préserver un bon transit et d'anticiper d'éventuels troubles digestifs.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeDigestion}" alt="Digestion" style="width:24px;"/> Qu'est-ce que la « poop clock » ?</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeDigestion}" alt="Digestion" style="width:24px;"/> Qu'est-ce que la « poop clock » ?</h2>
       <p>La « poop clock » désigne la fréquence à laquelle une personne va à la selle. Ce rythme varie selon les individus, mais il existe des repères pour juger de la normalité du transit.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>1 à 3 fois par jour : considéré comme normal</li>
@@ -285,7 +285,7 @@ export const articles: Article[] = [
         <li>Plus de 3 fois par jour : possible trouble digestif (diarrhée, syndrome de l'intestin irritable…)</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Fréquence normale et signaux d'alerte</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Fréquence normale et signaux d'alerte</h2>
       <p>Il est important d'être attentif à tout changement durable de la fréquence ou de l'aspect des selles :</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Selles très dures ou très liquides</li>
@@ -295,7 +295,7 @@ export const articles: Article[] = [
       </ul>
       <p>En cas de doute, consultez un professionnel de santé.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Conseils pour un bon transit</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Conseils pour un bon transit</h2>
       <ol style="margin-bottom:1.5em; padding-left:1.5em; list-style:decimal;">
         <li>Mangez des fibres (fruits, légumes, céréales complètes)</li>
         <li>Hydratez-vous suffisamment (1,5 à 2L d'eau par jour)</li>
@@ -303,7 +303,7 @@ export const articles: Article[] = [
         <li>Évitez le stress et adoptez un rythme de vie régulier</li>
       </ol>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>La surveillance de la fréquence et de l'aspect des selles est un réflexe santé simple et efficace. Un transit régulier est le reflet d'un bon équilibre alimentaire et d'une bonne hygiène de vie.</p>
     `,
     author: 'Équipe Regenlife',
@@ -321,7 +321,7 @@ export const articles: Article[] = [
       </div>
       <p>L'oxygénothérapie hyperbare (OTH) n'est pas seulement réservée aux pathologies lourdes : elle suscite un intérêt croissant pour le bien-être, la gestion du stress, l'amélioration du sommeil et la réduction des migraines. Voici un tour d'horizon des bénéfices potentiels de l'OTH dans ces domaines.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSommeil}" alt="Sommeil" style="width:24px;"/> OTH et stress</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeSommeil}" alt="Sommeil" style="width:24px;"/> OTH et stress</h2>
       <p>Le stress chronique a de nombreux effets délétères sur l'organisme. L'OTH, en augmentant l'oxygénation du cerveau et des tissus, favorise la détente, réduit la production de cortisol (hormone du stress) et améliore la récupération mentale.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Sensation de relaxation profonde après la séance</li>
@@ -329,7 +329,7 @@ export const articles: Article[] = [
         <li>Effet anti-inflammatoire bénéfique pour le système nerveux</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">OTH et sommeil</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">OTH et sommeil</h2>
       <p>Des études récentes montrent que l'OTH peut améliorer la qualité du sommeil, notamment chez les personnes souffrant d'insomnie ou de troubles du rythme circadien.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Endormissement facilité</li>
@@ -337,7 +337,7 @@ export const articles: Article[] = [
         <li>Diminution des réveils nocturnes</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">OTH et migraine</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">OTH et migraine</h2>
       <p>L'OTH est également étudiée pour son effet sur la fréquence et l'intensité des migraines. L'oxygène sous pression aide à réduire l'inflammation cérébrale et à améliorer la circulation sanguine.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Moins de crises migraineuses</li>
@@ -345,7 +345,7 @@ export const articles: Article[] = [
         <li>Amélioration de la qualité de vie des patients migraineux</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>L'oxygénothérapie hyperbare offre des perspectives prometteuses pour le bien-être global, la gestion du stress, l'amélioration du sommeil et la réduction des migraines. Pour toute indication, demandez conseil à un professionnel de santé spécialisé.</p>
     `,
     author: 'Équipe Regenlife',
@@ -363,7 +363,7 @@ export const articles: Article[] = [
       </div>
       <p>La Rejuvence Clinic est un centre de référence pour l'oxygénothérapie hyperbare (OTH) appliquée à la régénération cellulaire et au bien-être. Découvrez leur approche innovante, les protocoles proposés et les résultats observés chez les patients.</p>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb;display:flex;align-items:center;gap:0.5em;"><img src="${iconeRegeneration}" alt="Régénération" style="width:24px;"/> Présentation de la clinique</h2>
+      <h2 style="color:#D1A24C;display:flex;align-items:center;gap:0.5em;"><img src="${iconeRegeneration}" alt="Régénération" style="width:24px;"/> Présentation de la clinique</h2>
       <p>Située au Royaume-Uni, la Rejuvence Clinic propose des traitements OTH dans un environnement moderne et sécurisé, avec une équipe médicale spécialisée.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Chambres hyperbares de dernière génération</li>
@@ -371,7 +371,7 @@ export const articles: Article[] = [
         <li>Accompagnement du patient tout au long du protocole</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Protocoles OTH</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Protocoles OTH</h2>
       <p>La clinique propose des protocoles adaptés à chaque patient, selon ses besoins et ses objectifs :</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Traitements anti-âge et revitalisation cellulaire</li>
@@ -379,7 +379,7 @@ export const articles: Article[] = [
         <li>Optimisation des performances sportives</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.3rem; margin-bottom:0.5em;">Résultats et témoignages</h2>
+      <h2 style="color:#D1A24C; font-size:1.3rem; margin-bottom:0.5em;">Résultats et témoignages</h2>
       <p>De nombreux patients témoignent d'une amélioration de leur vitalité, d'une récupération plus rapide et d'un bien-être général après un protocole OTH à la Rejuvence Clinic.</p>
       <ul style="margin-bottom:1.5em; padding-left:1.5em; list-style:square;">
         <li>Peau plus éclatante et tonique</li>
@@ -387,7 +387,7 @@ export const articles: Article[] = [
         <li>Moins de douleurs chroniques</li>
       </ul>
       <hr style="margin:2em 0;"/>
-      <h2 style="color:#2563eb; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
+      <h2 style="color:#D1A24C; font-size:1.2rem; margin-bottom:0.5em;">En résumé</h2>
       <p>L'oxygénothérapie hyperbare, telle que pratiquée à la Rejuvence Clinic, s'impose comme une solution innovante pour la régénération cellulaire, la récupération et le bien-être. Pour toute question, contactez un professionnel de santé ou la clinique directement.</p>
     `,
     author: 'Équipe Regenlife',

@@ -39,7 +39,7 @@ const WomenHealth = () => {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-[#1c2431] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -48,10 +48,10 @@ const WomenHealth = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#D1A24C]">
             Santé Féminine
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#c4bcb4] max-w-2xl mx-auto">
             Prenez soin de votre santé avec notre équipe d'experts dédiés
           </p>
         </motion.div>
@@ -83,24 +83,24 @@ const WomenHealth = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-gray-900">
+            <h3 className="text-3xl font-bold text-white">
               Une approche holistique de la santé féminine
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-[#c4bcb4]">
               Notre équipe de professionnels de santé est dédiée à votre bien-être. Nous proposons des services adaptés à chaque étape de votre vie, de l'adolescence à la ménopause.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <FiAward className="w-6 h-6 text-pink-500 mt-1 mr-3" />
-                <span className="text-gray-700">Des consultations personnalisées</span>
+                <FiAward className="w-6 h-6" style={{ color: '#D1A24C' }} />
+                <span className="text-[#c4bcb4] ml-3">Des consultations personnalisées</span>
               </li>
               <li className="flex items-start">
-                <FiAward className="w-6 h-6 text-pink-500 mt-1 mr-3" />
-                <span className="text-gray-700">Un suivi médical complet</span>
+                <FiAward className="w-6 h-6" style={{ color: '#D1A24C' }} />
+                <span className="text-[#c4bcb4] ml-3">Un suivi médical complet</span>
               </li>
               <li className="flex items-start">
-                <FiAward className="w-6 h-6 text-pink-500 mt-1 mr-3" />
-                <span className="text-gray-700">Des solutions adaptées à vos besoins</span>
+                <FiAward className="w-6 h-6" style={{ color: '#D1A24C' }} />
+                <span className="text-[#c4bcb4] ml-3">Des solutions adaptées à vos besoins</span>
               </li>
             </ul>
           </motion.div>
@@ -118,15 +118,15 @@ const WomenHealth = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-pink-400 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-[#2e333f] rounded-3xl p-8 shadow-lg border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group hover:ring-2 hover:ring-[#D1A24C]"
               >
-                <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-4 text-pink-500 shadow-[0_0_0_6px_rgba(236,72,153,0.08)] group-hover:shadow-[0_0_0_10px_rgba(236,72,153,0.15)] transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 shadow-md" style={{ background: '#c4bcb4', color: '#1c2431' }}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[#c4bcb4]">
                   {service.description}
                 </p>
               </motion.div>

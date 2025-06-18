@@ -31,8 +31,8 @@ import {
   FiPhone
 } from 'react-icons/fi';
 import logoBlanc from '../assets/logo/regenlife-logo-blanc.png';
-import logoBleu from '../assets/logo/regenlife-logo-bleu.png';
-import logoRose from '../assets/logo/regenlife-logo-rose.png';
+import logoBleu from '../assets/logo/regenlife-logo-blanc.png';
+import logoRose from '../assets/logo/regenlife-logo-blanc.png';
 
 // Styles for custom scrollbar
 const scrollbarStyles = `
@@ -63,7 +63,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
   const serviceDropdowns = [
     {
       label: 'Urologie',
-      icon: <FiDroplet />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiDroplet /></span>,
       path: '/services/urologie',
       subMenu: [
         { label: 'Thérapie Cellulaire', path: '/services/urologie/cell-therapy' },
@@ -75,7 +75,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Services Féminins',
-      icon: <FiHeart className="text-pink-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiHeart /></span>,
       path: '/services/women/services/index',
       subMenu: [
         { label: 'Consultation Gynécologique', path: '/services/women/services/consultation-gynecologique' },
@@ -86,7 +86,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Traumatologie',
-      icon: <FiActivity />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiActivity /></span>,
       path: '/services/traumatologie',
       subMenu: [
         { label: 'Thérapie PRP', path: '/services/traumatologie/prp-therapy' },
@@ -98,7 +98,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Chirurgie Plastique',
-      icon: <FiUsers />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiUsers /></span>,
       path: '/services/chirurgie-plastique',
       subMenu: [
         { label: 'Thérapie par Exosomes', path: '/services/chirurgie-plastique/exosome-therapy' },
@@ -109,7 +109,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Radiologie',
-      icon: <FiRadio />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiRadio /></span>,
       path: '/services/radiologie',
       subMenu: [
         { label: 'ABPM', path: '/services/radiologie/abpm' },
@@ -119,7 +119,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Biologie',
-      icon: <FiCpu />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiCpu /></span>,
       path: '/services/biologie',
       subMenu: [
         { label: 'Thérapie NAD+', path: '/services/biologie/nad-plus-therapy' },
@@ -133,7 +133,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Paramédical',
-      icon: <FiFeather />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiFeather /></span>,
       path: '/services/paramediacle',
       subMenu: [
         { label: 'Ostéopathie', path: '/services/paramediacle/osteopathie' },
@@ -143,7 +143,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Sexologie',
-      icon: <FiActivity className="text-blue-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiActivity /></span>,
       path: '/services/sexologie',
       subMenu: [
         { label: 'Consultation Sexologique', path: '/services/sexologie/consultation' },
@@ -156,7 +156,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Cardiologie',
-      icon: <FiHeart className="text-blue-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiHeart /></span>,
       path: '/services/cardiologie',
       subMenu: [
         { label: 'Consultation Cardiologique', path: '/services/cardiologie/consultation' },
@@ -169,7 +169,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'ORL',
-      icon: <FiBook className="text-blue-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiBook /></span>,
       path: '/services/orl',
       subMenu: [
         { label: 'Consultation ORL', path: '/services/orl/consultation' },
@@ -182,7 +182,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Médecine Préventive',
-      icon: <FiShield className="text-blue-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiShield /></span>,
       path: '/services/medecine-preventive',
       subMenu: [
         { label: 'Bilan de Santé', path: '/services/medecine-preventive/bilan' },
@@ -196,13 +196,13 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
     },
     {
       label: 'Soins Etrangers',
-      icon: <FiGlobe className="text-blue-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiGlobe /></span>,
       path: '/services/soins-etrangers',
       subMenu: undefined,
     },
     {
       label: 'Installation & Retraite',
-      icon: <FiGlobe className="text-pink-500" />,
+      icon: <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#c4bcb4] text-[#1c2431] transition-colors duration-200"><FiGlobe /></span>,
       path: '/services/installation-retraite',
       subMenu: undefined,
     },
@@ -426,28 +426,30 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`fixed w-full z-50 transition-all duration-500 ${
-          isAppointment
+        className={`fixed w-full z-50 transition-all duration-500 font-montserrat tracking-wide
+          ${isAppointment
             ? 'bg-blue-600'
             : isScrolled
-              ? gynecoTheme ? 'bg-pink-300/90 backdrop-blur-md shadow-lg' : 'bg-white/90 backdrop-blur-md shadow-lg'
-              : 'bg-transparent'
-        }`}
+              ? gynecoTheme
+                ? 'bg-pink-300/90 backdrop-blur-lg shadow-2xl shadow-pink-200/40'
+                : 'bg-gradient-to-r from-[#181F2A]/90 via-[#181F2A]/40 to-[#181F2A]/90 backdrop-blur-lg shadow-2xl shadow-blue-900/40'
+              : 'bg-transparent backdrop-blur-none'}
+        `}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-24 w-full">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 cursor-pointer w-1/4 flex items-center"
+            className="flex-shrink-0 cursor-pointer flex items-center pl-20"
               onClick={() => navigate('/')}
             >
               <img
                 src={isAppointment ? logoBlanc : (isScrolled && !gynecoTheme ? (isWomenService ? logoRose : logoBleu) : logoBlanc)}
                 alt="Regenlife Logo"
-                className="h-20 w-auto transition-all duration-300"
-                style={{ maxHeight: 80 }}
+              className="h-16 w-auto transition-all duration-300"
+              style={{ maxHeight: 64 }}
               />
+            <span className="ml-2 text-2xl font-baskerville text-white select-none">Regenlife</span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -457,10 +459,10 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/')}
-                className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
+              className={`relative px-5 py-2 mx-2 text-base font-bold font-montserrat transition-all duration-300 overflow-hidden group h-full flex items-center hover:text-[#D1A24C] ${
                   isAppointment
                     ? 'text-white'
-                    : isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
+                  : isScrolled ? 'text-white' : 'text-white'
                 }`}
               >
                 Accueil
@@ -479,13 +481,13 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                     setDropdownOpen((open) => !open);
                     setActiveDropdown(dropdownOpen ? null : 'Services');
                   }}
-                  className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
-                    isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
+                className={`relative px-5 py-2 mx-2 text-base font-bold font-montserrat transition-all duration-300 overflow-hidden group h-full flex items-center hover:text-[#D1A24C] ${
+                  isScrolled ? 'text-white' : 'text-white'
                   }`}
                   aria-haspopup="true"
                   aria-expanded={dropdownOpen}
                 >
-                  <span className="flex items-center">
+                <span className="flex items-center font-montserrat">
                     Services
                     <FiChevronDown className={`ml-1 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </span>
@@ -497,14 +499,10 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-full left-0 mt-2 w-80 rounded-xl shadow-xl border z-50 ${
-                        isScrolled
-                          ? 'bg-white border-gray-200 text-gray-900'
-                          : 'bg-white/70 backdrop-blur-md shadow-xl text-blue-900 border-gray-200'
-                      }`}
+                    className="absolute top-full left-0 mt-2 w-80 rounded-xl shadow-xl z-50 bg-[#1c2431]/90 text-white backdrop-blur-md font-montserrat"
                     >
                       {/* Liste des spécialités */}
-                      <div className="divide-y divide-gray-200">
+                    <div>
                         {serviceDropdowns.map((spec, idx) => (
                           <div
                             key={spec.label}
@@ -519,8 +517,8 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                                   setDropdownOpen(false);
                                   setActiveDropdown(null);
                                 }}
-                                className="flex-1 flex items-center px-6 py-4 text-left hover:bg-blue-50 hover:text-primary transition-colors group/sub"
-                                style={{ background: activeDropdown === spec.label ? 'rgba(255,255,255,0.08)' : undefined }}
+                              className="flex-1 flex items-center px-6 py-4 text-left transition-colors group/sub hover:text-[#D1A24C] hover:bg-[#232b3e]"
+                              style={{ background: activeDropdown === spec.label ? 'rgba(255,255,255,0.04)' : undefined }}
                               >
                                 <span className="mr-3">{spec.icon}</span>
                                 <span className="font-semibold">{spec.label}</span>
@@ -532,7 +530,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                                     setActiveDropdown(spec.label);
                                   }}
                                   onMouseEnter={() => setActiveDropdown(spec.label)}
-                                  className="px-3 py-4 hover:text-primary transition-colors"
+                                className="px-3 py-4 hover:text-[#D1A24C] transition-colors"
                                   aria-label={`Voir les services de ${spec.label}`}
                                 >
                                   <FiChevronRight />
@@ -548,11 +546,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: 20 }}
                                     transition={{ duration: 0.2 }}
-                                    className={`absolute top-0 left-full ml-2 w-72 rounded-xl shadow-xl border z-50 ${
-                                      isScrolled
-                                        ? 'bg-white border-gray-200 text-gray-900'
-                                        : 'bg-white/70 backdrop-blur-md shadow-xl text-blue-900 border-gray-200'
-                                    }`}
+                                  className="absolute top-0 left-full ml-2 w-72 rounded-xl shadow-xl z-50 bg-[#1c2431]/90 text-white backdrop-blur-md font-montserrat"
                                     onMouseEnter={() => setActiveDropdown(spec.label)}
                                     onMouseLeave={() => setActiveDropdown('Services')}
                                   >
@@ -561,7 +555,7 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                                         <button
                                           key={srv.label}
                                           onClick={() => { navigate(srv.path); setDropdownOpen(false); setActiveDropdown(null); }}
-                                          className="w-full text-left px-6 py-3 hover:bg-blue-50 hover:text-primary transition-colors"
+                                        className="w-full text-left px-6 py-3 transition-colors hover:text-[#D1A24C] hover:bg-[#232b3e]"
                                         >
                                           {srv.label}
                                         </button>
@@ -584,8 +578,8 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/about')}
-                className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
-                  isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
+              className={`relative px-5 py-2 mx-2 text-base font-bold font-montserrat transition-all duration-300 overflow-hidden group h-full flex items-center hover:text-[#D1A24C] ${
+                isScrolled ? 'text-white' : 'text-white'
                 }`}
               >
                 À propos
@@ -596,61 +590,24 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/forum')}
-                className={`relative px-8 py-2 mx-2 text-lg font-bold transition-all duration-300 overflow-hidden group h-full flex items-center ${
-                  isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white'
+              className={`relative px-5 py-2 mx-2 text-base font-bold font-montserrat transition-all duration-300 overflow-hidden group h-full flex items-center hover:text-[#D1A24C] ${
+                isScrolled ? 'text-white' : 'text-white'
                 }`}
               >
                 Forum
               </motion.button>
             </div>
 
-            {/* Button - Right */}
-            <div className="hidden md:flex w-1/4 text-right gap-2 justify-end items-center">
+          {/* Téléphone */}
+          <div className="hidden md:flex items-center pr-20">
               <a
                 href="tel:0774779385"
-                className={`relative flex items-center px-4 py-2 rounded-full text-base font-semibold transition-all duration-300 ml-auto mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
-                  ${
-                    gynecoTheme
-                      ? 'bg-pink-500 text-white hover:bg-pink-600'
-                      : isWomenService
-                        ? 'bg-pink-600 text-white hover:bg-pink-700'
-                        : isScrolled
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-white text-blue-600 hover:bg-blue-50'
-                  }
-                `}
+              className="flex items-center text-white font-bold text-base hover:text-[#D1A24C]"
                 style={{ textDecoration: 'none' }}
               >
-                <FiPhone className="w-4 h-4 mr-1" />
+              <FiPhone className="w-5 h-5 mr-2" />
                 0774779385
               </a>
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: gynecoTheme
-                    ? '0 10px 15px -3px rgba(244, 114, 182, 0.3)'
-                    : isWomenService
-                      ? '0 10px 15px -3px rgba(236, 72, 153, 0.3)'
-                      : '0 10px 15px -3px rgba(59, 130, 246, 0.3)'
-                }}
-                onClick={() => navigate('/contact', { state: { specialite: 'Générique', service: 'Générique' } })}
-                className={`relative flex items-center px-4 py-2 rounded-full text-base font-semibold transition-all duration-300 ml-auto
-                  ${
-                    gynecoTheme
-                      ? 'bg-pink-500 text-white hover:bg-pink-600'
-                      : isWomenService
-                        ? 'bg-pink-600 text-white hover:bg-pink-700'
-                        : isScrolled
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-white text-blue-600 hover:bg-blue-50'
-                  }
-                `}
-              >
-                <span className="relative z-10 flex items-center">
-                  <FiCalendar className="w-4 h-4 mr-1" />
-                  Prendre RDV
-                </span>
-              </motion.button>
             </div>
 
             {/* Mobile menu button */}
@@ -670,7 +627,6 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                 <FiMenu className="h-7 w-7" />
               )}
             </motion.button>
-          </div>
         </div>
       </motion.nav>
 
@@ -820,22 +776,10 @@ const Navbar = ({ gynecoTheme = false, isAppointment = false }) => {
                   Forum
                 </motion.button>
 
-                {/* Bouton RDV */}
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => {
-                    navigate('/contact', { state: { specialite: 'Générique', service: 'Générique' } });
-                    setIsOpen(false);
-                  }}
-                  className="w-full mt-4 flex items-center justify-center px-4 py-2 rounded-full text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300"
-                >
-                  <FiCalendar className="w-5 h-5 mr-2" />
-                  Prendre RDV
-                </motion.button>
                 {/* Bouton téléphone mobile */}
                 <a
                   href="tel:0774779385"
-                  className="w-full mt-4 flex items-center justify-center px-4 py-2 rounded-full text-base font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+                  className="w-full mt-4 flex items-center justify-center text-white font-bold text-base hover:text-[#D1A24C]"
                   style={{ textDecoration: 'none' }}
                 >
                   <FiPhone className="w-5 h-5 mr-2" />

@@ -11,7 +11,8 @@
   }
 
   body {
-    @apply bg-white text-gray-900 min-h-screen;
+    @apply text-gray-900 min-h-screen;
+    background: #1c2431;
     font-family: 'Montserrat', sans-serif;
   }
   

@@ -82,17 +82,16 @@ const CancerProstate: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[48vh] flex items-center justify-center bg-gradient-to-r from-blue-800 to-blue-600 overflow-hidden pt-32">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Prostate Hero" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/80" />
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden pt-32" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+            className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg font-montserrat"
           >
             Cancer de la Prostate
           </motion.h1>
@@ -100,7 +99,7 @@ const CancerProstate: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-lg md:text-xl text-white/90 mb-8 drop-shadow"
+            className="text-lg md:text-xl text-white/90 mb-8 drop-shadow font-montserrat"
           >
             Le cancer masculin le plus fréquent au Maroc. Un dépistage précoce et un accompagnement personnalisé optimisent vos chances de guérison.
           </motion.p>
@@ -108,21 +107,23 @@ const CancerProstate: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/contact', { state: { specialite: 'urologie', service: 'Cancer de la Prostate' } })}
-            className="inline-flex items-center bg-white text-blue-700 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-50 transition-all duration-300 text-lg"
+            className="inline-flex items-center bg-[#D1A24C] text-[#1c2431] font-bold px-8 py-3 rounded-full shadow-lg hover:bg-[#c4bcb4] transition-all duration-300 text-lg"
           >
             Prendre rendez-vous <FiArrowRight className="ml-2" />
           </motion.button>
         </div>
+        {/* Flou/débordement bas du hero */}
+        <div className="absolute left-0 right-0 bottom-0 h-24 pointer-events-none z-20" style={{background: 'linear-gradient(180deg, rgba(44,49,63,0) 0%, rgba(28,36,49,0.7) 60%, #1c2431 100%)', backdropFilter: 'blur(12px)'}} />
       </section>
 
       {/* Avantages clés */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-2xl md:text-3xl font-bold text-blue-800 mb-8 text-center"
+            className="text-2xl md:text-3xl font-bold text-[#D1A24C] mb-8 text-center font-montserrat"
           >
             Pourquoi se faire dépister&nbsp;?
           </motion.h2>
@@ -133,11 +134,11 @@ const CancerProstate: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-blue-50 rounded-2xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+                className="bg-[#1c2431] rounded-2xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition"
               >
-                {a.icon}
-                <div className="font-semibold text-lg mt-3 mb-1 text-blue-900">{a.title}</div>
-                <div className="text-gray-600 text-sm">{a.desc}</div>
+                <div className="text-[#D1A24C] text-2xl mb-2">{a.icon}</div>
+                <div className="font-semibold text-lg mt-3 mb-1 text-white font-montserrat">{a.title}</div>
+                <div className="text-[#c4bcb4] text-sm">{a.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -145,21 +146,21 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Comprendre le cancer de la prostate */}
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-2xl font-bold text-blue-800 mb-4"
+              className="text-2xl font-bold text-[#D1A24C] mb-4 font-montserrat"
             >
               Comprendre le cancer de la prostate
             </motion.h2>
-            <p className="text-gray-700 mb-2">
+            <p className="text-[#c4bcb4] mb-2">
               Le cancer de la prostate se développe lentement dans la majorité des cas. Il touche principalement les hommes de plus de 50 ans. Un diagnostic précoce permet des traitements efficaces et une qualité de vie préservée.
             </p>
-            <ul className="list-disc pl-6 text-gray-700 text-sm">
+            <ul className="list-disc pl-6 text-[#c4bcb4] text-sm">
               <li>Guérissable dans la majorité des cas détectés tôt</li>
               <li>Dépistage simple et accessible au Maroc</li>
             </ul>
@@ -171,21 +172,21 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Symptômes */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Signes et symptômes à surveiller
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {symptomes.map((s, i) => (
-              <div key={i} className="flex items-center bg-blue-50 rounded-xl p-4 shadow-sm mb-2">
-                {s.icon}
-                <span className="ml-3 text-gray-700 text-sm">{s.text}</span>
+              <div key={i} className="flex items-center bg-[#1c2431] rounded-xl p-4 shadow-sm mb-2">
+                <span className="text-[#D1A24C] text-xl">{s.icon}</span>
+                <span className="ml-3 text-[#c4bcb4] text-sm">{s.text}</span>
               </div>
             ))}
           </div>
@@ -193,21 +194,21 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Facteurs de risque */}
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Facteurs de risque
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {risques.map((r, i) => (
-              <div key={i} className="flex items-center bg-white rounded-xl p-4 shadow-sm mb-2">
-                {r.icon}
-                <span className="ml-3 text-gray-700 text-sm">{r.text}</span>
+              <div key={i} className="flex items-center bg-[#2e333f] rounded-xl p-4 shadow-sm mb-2">
+                <span className="text-[#D1A24C] text-xl">{r.icon}</span>
+                <span className="ml-3 text-[#c4bcb4] text-sm">{r.text}</span>
               </div>
             ))}
           </div>
@@ -215,26 +216,26 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Dépistage & diagnostic timeline */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-8 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-8 text-center font-montserrat"
           >
             Dépistage et diagnostic&nbsp;: les étapes clés
           </motion.h3>
           <div className="flex flex-col md:flex-row md:justify-between gap-8">
             {depistageEtapes.map((etape, i) => (
               <div key={i} className="flex-1 flex flex-col items-center">
-                <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold shadow mb-2">
+                <div className="bg-[#D1A24C] text-[#1c2431] rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold shadow mb-2">
                   {etape.step}
                 </div>
-                <div className="font-semibold text-blue-800 mb-1">{etape.title}</div>
-                <div className="text-gray-600 text-sm text-center">{etape.desc}</div>
+                <div className="font-semibold text-[#D1A24C] mb-1 font-montserrat">{etape.title}</div>
+                <div className="text-[#c4bcb4] text-sm text-center">{etape.desc}</div>
                 {i < depistageEtapes.length - 1 && (
-                  <div className="hidden md:block w-1 h-8 bg-blue-200 mx-auto my-2" />
+                  <div className="hidden md:block w-1 h-8 bg-[#c4bcb4] mx-auto my-2" />
                 )}
               </div>
             ))}
@@ -243,23 +244,23 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Prise en charge & traitements */}
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-8 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-8 text-center font-montserrat"
           >
             Prise en charge et traitements
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {traitements.map((t, i) => (
-              <div key={i} className="flex items-center bg-white rounded-xl p-5 shadow-sm mb-2">
-                {t.icon}
+              <div key={i} className="flex items-center bg-[#2e333f] rounded-xl p-5 shadow-sm mb-2">
+                <span className="text-[#D1A24C] text-xl">{t.icon}</span>
                 <div className="ml-4">
-                  <div className="font-semibold text-blue-900">{t.title}</div>
-                  <div className="text-gray-600 text-sm">{t.desc}</div>
+                  <div className="font-semibold text-[#D1A24C] font-montserrat">{t.title}</div>
+                  <div className="text-[#c4bcb4] text-sm">{t.desc}</div>
                 </div>
               </div>
             ))}
@@ -268,24 +269,24 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* Vivre avec et après */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-3xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Vivre avec et après le cancer
           </motion.h3>
-          <div className="bg-blue-50 rounded-2xl shadow p-6 text-center">
-            <div className="text-blue-800 font-semibold mb-2">Un accompagnement global</div>
-            <div className="text-gray-700 text-sm mb-2">Suivi médical régulier, gestion des effets secondaires, soutien psychologique et familial, groupes de parole au Maroc.</div>
+          <div className="bg-[#1c2431] rounded-2xl shadow p-6 text-center">
+            <div className="text-[#D1A24C] font-semibold mb-2 font-montserrat">Un accompagnement global</div>
+            <div className="text-[#c4bcb4] text-sm mb-2">Suivi médical régulier, gestion des effets secondaires, soutien psychologique et familial, groupes de parole au Maroc.</div>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/contact', { state: { specialite: 'urologie', service: 'Cancer de la Prostate' } })}
-              className="inline-flex items-center bg-blue-700 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-800 transition-all duration-300 mt-2"
+              className="inline-flex items-center bg-[#D1A24C] text-[#1c2431] font-semibold px-6 py-2 rounded-full shadow hover:bg-[#c4bcb4] transition-all duration-300 mt-2"
             >
               Prendre rendez-vous <FiArrowRight className="ml-2" />
             </motion.button>
@@ -294,13 +295,13 @@ const CancerProstate: React.FC = () => {
       </section>
 
       {/* FAQ améliorée */}
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-3xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-blue-700 mb-8 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-8 text-center font-montserrat"
           >
             Questions fréquentes
           </motion.h3>
@@ -313,7 +314,7 @@ const CancerProstate: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className={`bg-white rounded-3xl shadow-lg transition-all duration-300 cursor-pointer border border-blue-100 hover:shadow-xl ${isOpen ? 'ring-2 ring-blue-200' : ''}`}
+                  className={`bg-[#2e333f] rounded-3xl shadow-lg transition-all duration-300 cursor-pointer border border-[#c4bcb4] hover:shadow-xl ${isOpen ? 'ring-2 ring-[#D1A24C]' : ''}`}
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
                   tabIndex={0}
                   aria-expanded={isOpen}
@@ -321,8 +322,8 @@ const CancerProstate: React.FC = () => {
                   onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenFaq(isOpen ? null : idx); }}
                 >
                   <div className="flex items-center px-6 py-5 select-none">
-                    <FiInfo className="text-blue-500 mr-3 flex-shrink-0" />
-                    <span className="font-semibold text-blue-700 text-base flex-1">
+                    <FiInfo className="text-[#D1A24C] mr-3 flex-shrink-0" />
+                    <span className="font-semibold text-[#D1A24C] text-base flex-1 font-montserrat">
                       {faq.question}
                     </span>
                     <motion.span
@@ -330,7 +331,7 @@ const CancerProstate: React.FC = () => {
                       transition={{ duration: 0.3 }}
                       className="ml-2"
                     >
-                      <FiChevronDown className="w-5 h-5 text-blue-400" />
+                      <FiChevronDown className="w-5 h-5 text-[#c4bcb4]" />
                     </motion.span>
                   </div>
                   <motion.div
@@ -341,7 +342,7 @@ const CancerProstate: React.FC = () => {
                     className="overflow-hidden px-6"
                   >
                     {isOpen && (
-                      <div className="pb-5 text-gray-700 text-sm">
+                      <div className="pb-5 text-[#c4bcb4] text-sm">
                         {faq.answer}
                       </div>
                     )}

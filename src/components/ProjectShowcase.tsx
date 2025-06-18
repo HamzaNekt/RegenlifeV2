@@ -72,7 +72,7 @@ const ProjectShowcase = () => {
                 </motion.h2>
                 {projects[current].caption && (
                   <motion.p 
-                    className="text-xl tracking-widest text-cyan-400/90"
+                    className="text-xl tracking-widest text-[#D1A24C]"
                     style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}

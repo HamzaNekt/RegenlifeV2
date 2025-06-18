@@ -98,7 +98,7 @@ const Team = () => {
   };
 
   return (
-    <section id="team" className="section bg-gray-50 dark:bg-gray-800">
+    <section id="team" className="section bg-[#1c2431]">
       <div className="container">
         <motion.div
           ref={ref}
@@ -108,10 +108,10 @@ const Team = () => {
           className="space-y-16"
         >
           <div className="text-center">
-            <motion.h2 variants={itemVariants} className="heading">
+            <motion.h2 variants={itemVariants} className="heading text-[#D1A24C]">
               Notre Équipe
             </motion.h2>
-            <motion.p variants={itemVariants} className="subheading">
+            <motion.p variants={itemVariants} className="subheading text-[#c4bcb4]">
               Des experts dédiés à votre santé et votre bien-être
             </motion.p>
           </div>
@@ -122,7 +122,7 @@ const Team = () => {
                 key={member.id}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden"
+                className="bg-[#2e333f] rounded-xl shadow-lg overflow-hidden"
               >
                 <div className="relative h-64">
                   <img
@@ -133,26 +133,26 @@ const Team = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                     <div>
                       <h3 className="text-xl font-bold text-white drop-shadow-lg">{member.name}</h3>
-                      <span className="inline-block mt-1 px-3 py-1 rounded-lg bg-black/50 text-white font-semibold text-base drop-shadow shadow-md">
+                      <span className="inline-block mt-1 px-3 py-1 rounded-lg bg-[#c4bcb4] text-[#1c2431] font-semibold text-base drop-shadow shadow-md">
                         {member.role}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-[#c4bcb4] mb-4">
                     {member.bio}
                   </p>
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-gray-800 dark:text-white">Spécialités:</h4>
+                    <h4 className="font-semibold text-white">Spécialités:</h4>
                     <ul className="space-y-1">
                       {member.specialties.map((specialty, specialtyIndex) => (
                         <li
                           key={specialtyIndex}
-                          className="flex items-center text-gray-600 dark:text-gray-300"
+                          className="flex items-center text-[#c4bcb4]"
                         >
                           <svg
-                            className="w-4 h-4 mr-2 text-primary"
+                            className="w-4 h-4 mr-2 text-[#D1A24C]"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >

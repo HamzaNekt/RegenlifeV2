@@ -90,17 +90,18 @@ const steps = [
 const InstallationRetraite = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#1c2431] relative overflow-x-hidden">
       {/* HERO */}
-      <section className="relative h-[45vh] bg-gradient-to-r from-pink-700 to-pink-500 flex items-center justify-center pt-32 shadow-xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/60 to-pink-500/40 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-100/40 via-transparent to-transparent" />
+      <section className="relative h-[70vh] flex items-center justify-center pt-32 overflow-hidden" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/40" />
+        {/* Flou/débordement bas du hero */}
+        <div className="absolute left-0 right-0 bottom-0 h-24 pointer-events-none z-20" style={{background: 'linear-gradient(180deg, rgba(44,49,63,0) 0%, rgba(28,36,49,0.7) 60%, #1c2431 100%)', backdropFilter: 'blur(12px)'}} />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg"
+            className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat"
           >
             Installation & Retraite au Maroc
           </motion.h1>
@@ -108,13 +109,13 @@ const InstallationRetraite = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-xl text-white/90 mb-4 drop-shadow"
+            className="text-xl text-white/90 mb-4 font-montserrat"
           >
             Regenlife organise l'installation globale des retraités étrangers au Maroc : santé, démarches, logement, vie quotidienne.
           </motion.p>
           <button
             onClick={() => navigate('/contact', { state: { specialite: 'installation-retraite', service: 'Installation & Retraite' } })}
-            className="inline-flex items-center bg-gradient-to-r from-yellow-200 via-white to-pink-100 text-pink-700 font-bold px-8 py-3 rounded-full shadow-lg hover:scale-105 hover:from-yellow-300 hover:to-pink-200 transition-all duration-300 text-lg border-2 border-pink-200"
+            className="inline-flex items-center bg-[#D1A24C] text-[#1c2431] font-bold px-8 py-3 rounded-full shadow-lg hover:bg-[#c4bcb4] hover:scale-105 transition-all duration-300 text-lg border-2 border-[#D1A24C] font-montserrat"
           >
             Prendre contact <FiArrowRight className="ml-2" />
           </button>
@@ -122,9 +123,9 @@ const InstallationRetraite = () => {
       </section>
 
       {/* SERVICES PRATIQUES */}
-      <section className="py-16 bg-gradient-to-b from-white via-pink-50 to-white">
+      <section className="py-16 bg-[#1c2431]">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-pink-700 mb-10 text-center">Services pratiques pour votre installation</h2>
+          <h2 className="text-3xl font-bold text-[#D1A24C] mb-10 text-center font-montserrat">Services pratiques pour votre installation</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {practicalServices.map((srv, idx) => (
               <motion.div
@@ -133,11 +134,14 @@ const InstallationRetraite = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white rounded-3xl shadow-xl p-7 flex flex-col items-center text-center border border-pink-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#2e333f] rounded-3xl shadow-xl p-7 flex flex-col items-center text-center border border-[#2e333f] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
-                {srv.icon}
-                <div className="font-semibold text-lg mt-2 mb-1 text-pink-900">{srv.title}</div>
-                <div className="text-gray-600 text-sm">{srv.desc}</div>
+                {/* Icônes premium */}
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-2">
+                  {React.cloneElement(srv.icon, { className: 'w-7 h-7 text-[#D1A24C]' })}
+                </div>
+                <div className="font-semibold text-lg mt-2 mb-1 text-white font-montserrat">{srv.title}</div>
+                <div className="text-[#c4bcb4] text-sm">{srv.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -145,9 +149,9 @@ const InstallationRetraite = () => {
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className="py-16 bg-gradient-to-b from-pink-50 to-white">
+      <section className="py-16 bg-[#1c2431]">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-pink-700 mb-10 text-center">Pourquoi choisir Regenlife&nbsp;?</h2>
+          <h2 className="text-3xl font-bold text-[#D1A24C] mb-10 text-center font-montserrat">Pourquoi choisir Regenlife&nbsp;?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {highlights.map((item, idx) => (
               <motion.div
@@ -156,11 +160,13 @@ const InstallationRetraite = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-gradient-to-br from-white via-pink-50 to-yellow-50 rounded-3xl shadow-lg p-7 flex flex-col items-center text-center border border-pink-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#2e333f] rounded-3xl shadow-lg p-7 flex flex-col items-center text-center border border-[#2e333f] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
-                {item.icon}
-                <div className="font-semibold text-lg mt-2 mb-1 text-pink-900">{item.title}</div>
-                <div className="text-gray-600 text-sm">{item.desc}</div>
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-2">
+                  {React.cloneElement(item.icon, { className: 'w-7 h-7 text-[#D1A24C]' })}
+                </div>
+                <div className="font-semibold text-lg mt-2 mb-1 text-white font-montserrat">{item.title}</div>
+                <div className="text-[#c4bcb4] text-sm">{item.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -168,18 +174,18 @@ const InstallationRetraite = () => {
       </section>
 
       {/* TIMELINE */}
-      <section className="py-16 bg-gradient-to-b from-white to-pink-50">
+      <section className="py-16 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-pink-700 mb-10 text-center">Votre accompagnement pas à pas</h2>
+          <h2 className="text-3xl font-bold text-[#D1A24C] mb-10 text-center font-montserrat">Votre accompagnement pas à pas</h2>
           <ol className="relative border-l-4 border-pink-200 ml-4">
             {steps.map((step, idx) => (
               <li key={step.title} className="mb-12 ml-6">
-                <span className="absolute -left-6 flex items-center justify-center w-12 h-12 bg-gradient-to-br from-pink-400 via-yellow-200 to-pink-100 rounded-full shadow-lg ring-4 ring-white">
-                  <span className="text-2xl font-bold text-pink-900">{idx + 1}</span>
+                <span className="absolute -left-6 flex items-center justify-center w-12 h-12 bg-[#c4bcb4] rounded-full shadow-lg ring-4 ring-[#2e333f]">
+                  <span className="text-2xl font-bold text-[#D1A24C]">{idx + 1}</span>
                 </span>
-                <div className="bg-white rounded-xl shadow p-6 ml-2 border border-pink-100">
-                  <h3 className="font-semibold text-lg text-pink-800 mb-1">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                <div className="bg-[#2e333f] rounded-xl shadow p-6 ml-2 border border-[#2e333f]">
+                  <h3 className="font-semibold text-lg text-white mb-1 font-montserrat">{step.title}</h3>
+                  <p className="text-[#c4bcb4] text-sm">{step.desc}</p>
                 </div>
               </li>
             ))}
@@ -188,12 +194,12 @@ const InstallationRetraite = () => {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-16 bg-gradient-to-r from-pink-700 via-pink-400 to-yellow-100 flex items-center justify-center">
+      <section className="py-16 bg-gradient-to-r from-[#2e333f] to-[#1c2431] flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow">Envisagez votre retraite au Maroc en toute sérénité&nbsp;!</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-montserrat">Envisagez votre retraite au Maroc en toute sérénité&nbsp;!</h2>
           <button
             onClick={() => navigate('/contact', { state: { specialite: 'installation-retraite', service: 'Installation & Retraite' } })}
-            className="inline-flex items-center bg-gradient-to-r from-yellow-200 via-white to-pink-100 text-pink-700 font-bold px-10 py-4 rounded-full shadow-xl hover:scale-105 hover:from-yellow-300 hover:to-pink-200 transition-all duration-300 text-xl border-2 border-pink-200"
+            className="inline-flex items-center bg-[#D1A24C] text-[#1c2431] font-bold px-10 py-4 rounded-full shadow-xl hover:bg-[#c4bcb4] hover:scale-105 transition-all duration-300 text-xl border-2 border-[#D1A24C] font-montserrat"
           >
             Contactez-nous <FiArrowRight className="ml-3" />
           </button>

@@ -51,36 +51,35 @@ const DepistageGastro: React.FC = () => {
 
   // Tableaux contenant du JSX doivent être ici
   const avantages = [
-    { icon: <FiCheckCircle className="text-green-600 w-7 h-7" />, title: 'Prévention efficace', desc: 'Le dépistage permet d\'éviter la majorité des cancers du côlon.' },
-    { icon: <FiSearch className="text-blue-600 w-7 h-7" />, title: 'Détection précoce', desc: 'Un diagnostic tôt augmente les chances de guérison.' },
-    { icon: <FiHeart className="text-pink-500 w-7 h-7" />, title: 'Accompagnement humain', desc: 'Notre équipe vous guide à chaque étape du dépistage.' },
+    { icon: <FiCheckCircle className="text-[#D1A24C] w-7 h-7" />, title: 'Prévention efficace', desc: 'Le dépistage permet d\'éviter la majorité des cancers du côlon.' },
+    { icon: <FiSearch className="text-[#D1A24C] w-7 h-7" />, title: 'Détection précoce', desc: 'Un diagnostic tôt augmente les chances de guérison.' },
+    { icon: <FiHeart className="text-[#D1A24C] w-7 h-7" />, title: 'Accompagnement humain', desc: 'Notre équipe vous guide à chaque étape du dépistage.' },
   ];
   const symptomes = [
-    { icon: <FiAlertCircle className="text-red-500 w-6 h-6" />, text: 'Sang dans les selles' },
-    { icon: <FiAlertCircle className="text-red-500 w-6 h-6" />, text: 'Troubles du transit (diarrhée, constipation persistante)' },
-    { icon: <FiAlertCircle className="text-red-500 w-6 h-6" />, text: 'Douleurs abdominales inexpliquées' },
-    { icon: <FiAlertCircle className="text-red-500 w-6 h-6" />, text: 'Perte de poids ou fatigue inexpliquée' },
-    { icon: <FiAlertCircle className="text-red-500 w-6 h-6" />, text: 'Parfois aucun symptôme au début' },
+    { icon: <FiAlertCircle className="text-[#D1A24C] w-6 h-6" />, text: 'Sang dans les selles' },
+    { icon: <FiAlertCircle className="text-[#D1A24C] w-6 h-6" />, text: 'Troubles du transit (diarrhée, constipation persistante)' },
+    { icon: <FiAlertCircle className="text-[#D1A24C] w-6 h-6" />, text: 'Douleurs abdominales inexpliquées' },
+    { icon: <FiAlertCircle className="text-[#D1A24C] w-6 h-6" />, text: 'Perte de poids ou fatigue inexpliquée' },
+    { icon: <FiAlertCircle className="text-[#D1A24C] w-6 h-6" />, text: 'Parfois aucun symptôme au début' },
   ];
   const risques = [
-    { icon: <FiUser className="text-blue-600 w-6 h-6" />, text: 'Âge (après 50 ans)' },
-    { icon: <FiShield className="text-blue-600 w-6 h-6" />, text: 'Antécédents familiaux de polypes ou cancer colorectal' },
-    { icon: <FiActivity className="text-blue-600 w-6 h-6" />, text: 'Sédentarité, alimentation pauvre en fibres' },
-    { icon: <FiHeart className="text-pink-500 w-6 h-6" />, text: 'Maladies inflammatoires chroniques de l\'intestin' },
+    { icon: <FiUser className="text-[#D1A24C] w-6 h-6" />, text: 'Âge (après 50 ans)' },
+    { icon: <FiShield className="text-[#D1A24C] w-6 h-6" />, text: 'Antécédents familiaux de polypes ou cancer colorectal' },
+    { icon: <FiActivity className="text-[#D1A24C] w-6 h-6" />, text: 'Sédentarité, alimentation pauvre en fibres' },
+    { icon: <FiHeart className="text-[#D1A24C] w-6 h-6" />, text: 'Maladies inflammatoires chroniques de l\'intestin' },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[48vh] flex items-center justify-center bg-gradient-to-r from-pink-600 to-pink-400 overflow-hidden pt-32">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Coloscopie Hero" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-700/80 to-pink-400/80" />
-        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
+      <section className="relative h-[65vh] flex items-center justify-center overflow-hidden pt-32" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center flex flex-col items-center justify-center h-full">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+            className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg font-montserrat"
           >
             Dépistage Gastro-intestinal
           </motion.h1>
@@ -88,7 +87,7 @@ const DepistageGastro: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-lg md:text-xl text-white/90 mb-8 drop-shadow"
+            className="text-lg md:text-xl text-white/90 mb-8 drop-shadow font-montserrat"
           >
             Prévenir le cancer du côlon grâce à un dépistage simple, efficace et accessible.
           </motion.p>
@@ -96,22 +95,24 @@ const DepistageGastro: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/contact', { state: { specialite: 'medecine-preventive', service: 'Dépistage Gastro-intestinal' } })}
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#D1A24C] text-[#1c2431] px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:bg-[#c4bcb4] hover:shadow-xl transition-shadow duration-300"
           >
             Prendre Rendez-vous
             <FiArrowRight className="w-5 h-5" />
           </motion.button>
         </div>
+        {/* Flou/débordement bas du hero */}
+        <div className="absolute left-0 right-0 bottom-0 h-24 pointer-events-none z-20" style={{background: 'linear-gradient(180deg, rgba(44,49,63,0) 0%, rgba(28,36,49,0.7) 60%, #1c2431 100%)', backdropFilter: 'blur(12px)'}} />
       </section>
 
       {/* Avantages clés */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-2xl md:text-3xl font-bold text-pink-700 mb-8 text-center"
+            className="text-2xl md:text-3xl font-bold text-[#D1A24C] mb-8 text-center font-montserrat"
           >
             Pourquoi se faire dépister&nbsp;?
           </motion.h2>
@@ -122,11 +123,11 @@ const DepistageGastro: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-pink-50 rounded-2xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition"
+                className="bg-[#2e333f] rounded-2xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition"
               >
                 {a.icon}
-                <div className="font-semibold text-lg mt-3 mb-1 text-pink-900">{a.title}</div>
-                <div className="text-gray-600 text-sm">{a.desc}</div>
+                <div className="font-semibold text-lg mt-3 mb-1 text-[#D1A24C] font-montserrat">{a.title}</div>
+                <div className="text-[#c4bcb4] text-sm">{a.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -140,14 +141,14 @@ const DepistageGastro: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="bg-pink-100 border-l-8 border-pink-500 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center mb-8"
+            className="bg-[#2e333f] border-l-8 border-[#D1A24C] rounded-2xl shadow-lg p-8 flex flex-col items-center text-center mb-8"
           >
-            <FiHeart className="text-pink-500 w-10 h-10 mb-3" />
-            <h3 className="text-2xl font-bold text-pink-700 mb-2">Le service Regenlife&nbsp;: un dépistage expert et humain</h3>
-            <p className="text-gray-700 text-base md:text-lg mb-2">
+            <FiHeart className="text-[#D1A24C] w-10 h-10 mb-3" />
+            <h3 className="text-2xl font-bold text-[#D1A24C] mb-2 font-montserrat">Le service Regenlife&nbsp;: un dépistage expert et humain</h3>
+            <p className="text-[#c4bcb4] text-base md:text-lg mb-2">
               Chez Regenlife, vous bénéficiez d'un accompagnement personnalisé à chaque étape du dépistage gastro-intestinal. Nos spécialistes expérimentés vous accueillent dans un environnement rassurant, avec du matériel moderne et des protocoles validés.
             </p>
-            <p className="text-gray-700 text-base md:text-lg">
+            <p className="text-[#c4bcb4] text-base md:text-lg">
               En cas de résultat positif, une prise en charge rapide et coordonnée vous est proposée, pour maximiser vos chances de prévention et de guérison. Notre équipe est à votre écoute pour répondre à toutes vos questions et vous guider sereinement.
             </p>
           </motion.div>
@@ -155,21 +156,21 @@ const DepistageGastro: React.FC = () => {
       </section>
 
       {/* Comprendre le cancer colorectal */}
-      <section className="py-12 bg-pink-50">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-2xl font-bold text-pink-700 mb-4"
+              className="text-2xl font-bold text-[#D1A24C] mb-4 font-montserrat"
             >
               Comprendre le cancer colorectal
             </motion.h2>
-            <p className="text-gray-700 mb-2">
+            <p className="text-[#c4bcb4] mb-2">
               Le cancer colorectal est l'un des cancers les plus fréquents, mais aussi l'un des plus évitables grâce au dépistage. Il se développe à partir de polypes qui peuvent être retirés avant de devenir cancéreux.
             </p>
-            <ul className="list-disc pl-6 text-gray-700 text-sm">
+            <ul className="list-disc pl-6 text-[#c4bcb4] text-sm">
               <li>Le dépistage permet d'éviter la majorité des cancers du côlon</li>
               <li>Un diagnostic précoce améliore considérablement le pronostic</li>
             </ul>
@@ -181,21 +182,21 @@ const DepistageGastro: React.FC = () => {
       </section>
 
       {/* Symptômes */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-pink-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Signes et symptômes à surveiller
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {symptomes.map((s, i) => (
-              <div key={i} className="flex items-center bg-pink-50 rounded-xl p-4 shadow-sm mb-2">
+              <div key={i} className="flex items-center bg-[#2e333f] rounded-xl p-4 shadow-sm mb-2">
                 {s.icon}
-                <span className="ml-3 text-gray-700 text-sm">{s.text}</span>
+                <span className="ml-3 text-[#c4bcb4] text-sm">{s.text}</span>
               </div>
             ))}
           </div>
@@ -203,21 +204,21 @@ const DepistageGastro: React.FC = () => {
       </section>
 
       {/* Facteurs de risque */}
-      <section className="py-12 bg-pink-50">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-pink-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Facteurs de risque
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {risques.map((r, i) => (
-              <div key={i} className="flex items-center bg-pink-100 rounded-xl p-4 shadow-sm mb-2">
+              <div key={i} className="flex items-center bg-[#1c2431] rounded-xl p-4 shadow-sm mb-2">
                 {r.icon}
-                <span className="ml-3 text-gray-700 text-sm">{r.text}</span>
+                <span className="ml-3 text-[#c4bcb4] text-sm">{r.text}</span>
               </div>
             ))}
           </div>
@@ -225,23 +226,23 @@ const DepistageGastro: React.FC = () => {
       </section>
 
       {/* Étapes du dépistage */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#1c2431]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-xl font-bold text-pink-700 mb-6 text-center"
+            className="text-xl font-bold text-[#D1A24C] mb-6 text-center font-montserrat"
           >
             Étapes du dépistage
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {depistageEtapes.map((e, i) => (
-              <div key={i} className="flex items-start bg-pink-50 rounded-xl p-4 shadow-sm mb-2">
-                <span className="font-bold text-pink-700 mr-4">{e.step}.</span>
+              <div key={i} className="flex items-start bg-[#2e333f] rounded-xl p-4 shadow-sm mb-2">
+                <span className="font-bold text-[#D1A24C] mr-4">{e.step}.</span>
                 <div>
-                  <div className="font-semibold text-pink-800">{e.title}</div>
-                  <div className="text-gray-700 text-sm">{e.desc}</div>
+                  <div className="font-semibold text-[#D1A24C] font-montserrat">{e.title}</div>
+                  <div className="text-[#c4bcb4] text-sm">{e.desc}</div>
                 </div>
               </div>
             ))}
@@ -250,16 +251,16 @@ const DepistageGastro: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 bg-pink-50">
+      <section className="py-12 bg-[#2e333f]">
         <div className="max-w-3xl mx-auto px-4">
-          <h3 className="text-xl font-bold text-pink-700 mb-8 text-center">Questions fréquentes</h3>
+          <h3 className="text-xl font-bold text-[#D1A24C] mb-8 text-center">Questions fréquentes</h3>
           <div className="space-y-5">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
                 <div
                   key={idx}
-                  className={`bg-white rounded-3xl shadow-lg transition-all duration-300 cursor-pointer border border-pink-100 hover:shadow-xl ${isOpen ? 'ring-2 ring-pink-200' : ''}`}
+                  className={`bg-[#1c2431] rounded-3xl shadow-lg transition-all duration-300 cursor-pointer border border-[#2e333f] hover:shadow-xl ${isOpen ? 'ring-2 ring-[#D1A24C]' : ''}`}
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
                   tabIndex={0}
                   aria-expanded={isOpen}
@@ -267,14 +268,14 @@ const DepistageGastro: React.FC = () => {
                   onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenFaq(isOpen ? null : idx); }}
                 >
                   <div className="flex items-center px-6 py-5 select-none">
-                    <FiInfo className="text-pink-500 mr-3 flex-shrink-0" />
-                    <span className="font-semibold text-pink-700 text-base flex-1">
+                    <FiInfo className="text-[#D1A24C] mr-3 flex-shrink-0" />
+                    <span className="font-semibold text-[#D1A24C] text-base flex-1">
                       {faq.question}
                     </span>
                     <span
                       className={`ml-2 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                     >
-                      <FiChevronDown className="w-5 h-5 text-pink-400" />
+                      <FiChevronDown className="w-5 h-5 text-[#D1A24C]" />
                     </span>
                   </div>
                   <div
@@ -282,7 +283,7 @@ const DepistageGastro: React.FC = () => {
                     className={`overflow-hidden px-6 transition-all duration-300 ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     {isOpen && (
-                      <div className="pb-5 text-gray-700 text-sm">
+                      <div className="pb-5 text-[#c4bcb4] text-sm">
                         {faq.answer}
                       </div>
                     )}

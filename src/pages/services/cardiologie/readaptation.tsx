@@ -26,10 +26,10 @@ const ReadaptationCardiaque: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-gradient-to-r from-blue-600 to-blue-800 pt-32">
-        <div className="absolute inset-0 bg-black/50" />
+      <section className="relative h-[65vh] pt-32 flex items-center overflow-hidden" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,23 +37,25 @@ const ReadaptationCardiaque: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-white max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-montserrat">
               Réadaptation Cardiaque
             </h1>
-            <p className="text-xl mb-8">
+            <p className="text-xl mb-8 font-montserrat">
               Un programme complet pour retrouver une vie active après un problème cardiaque, sous la supervision d'experts.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/contact', { state: { specialite: 'cardiologie', service: 'Réadaptation Cardiaque' } })}
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#D1A24C] text-[#1c2431] px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:bg-[#c4bcb4] hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous
               <FiArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
         </div>
+        {/* Flou/débordement bas du hero */}
+        <div className="absolute left-0 right-0 bottom-0 h-24 pointer-events-none z-20" style={{background: 'linear-gradient(180deg, rgba(44,49,63,0) 0%, rgba(28,36,49,0.7) 60%, #1c2431 100%)', backdropFilter: 'blur(12px)'}} />
       </section>
 
       {/* Main Content */}
@@ -65,30 +67,30 @@ const ReadaptationCardiaque: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-[#D1A24C] mb-6 font-montserrat">
               Qu'est-ce que la Réadaptation Cardiaque ?
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-[#c4bcb4] mb-6 font-montserrat">
               La réadaptation cardiaque est un programme structuré qui aide les patients à retrouver une vie normale après un problème cardiaque. Elle combine exercices physiques supervisés, éducation thérapeutique et soutien psychologique pour une récupération optimale.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Programme Personnalisé</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3 font-montserrat">Programme Personnalisé</h3>
+                <p className="text-[#c4bcb4]">
                   Un plan de réadaptation adapté à votre condition et à vos objectifs.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Suivi Médical</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3 font-montserrat">Suivi Médical</h3>
+                <p className="text-[#c4bcb4]">
                   Surveillance constante par une équipe de professionnels de santé.
                 </p>
               </motion.div>
@@ -103,32 +105,32 @@ const ReadaptationCardiaque: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-[#D1A24C] mb-6 font-montserrat">
               Avantages de la Réadaptation
             </h2>
             <div className="space-y-6">
               <motion.div 
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-[#1c2431] shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-[#D1A24C] mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Récupération Optimale</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-xl font-semibold text-white mb-2 font-montserrat">Récupération Optimale</h3>
+                  <p className="text-[#c4bcb4]">
                     Amélioration de la condition physique et de la qualité de vie.
                   </p>
                 </div>
               </motion.div>
               <motion.div 
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-[#1c2431] shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-[#D1A24C] mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Équipe Multidisciplinaire</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-xl font-semibold text-white mb-2 font-montserrat">Équipe Multidisciplinaire</h3>
+                  <p className="text-[#c4bcb4]">
                     Accompagnement par des cardiologues, kinésithérapeutes et psychologues.
                   </p>
                 </div>
@@ -144,32 +146,32 @@ const ReadaptationCardiaque: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-[#D1A24C] mb-6 font-montserrat">
               Programme de Réadaptation
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Exercices Physiques</h3>
-                <p className="text-gray-700">Activités adaptées et progressives sous surveillance</p>
+                <h3 className="text-xl font-semibold text-white mb-3 font-montserrat">Exercices Physiques</h3>
+                <p className="text-[#c4bcb4]">Activités adaptées et progressives sous surveillance</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Éducation Thérapeutique</h3>
-                <p className="text-gray-700">Conseils et informations pour une meilleure gestion</p>
+                <h3 className="text-xl font-semibold text-white mb-3 font-montserrat">Éducation Thérapeutique</h3>
+                <p className="text-[#c4bcb4]">Conseils et informations pour une meilleure gestion</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Support Psychologique</h3>
-                <p className="text-gray-700">Accompagnement pour le bien-être mental</p>
+                <h3 className="text-xl font-semibold text-white mb-3 font-montserrat">Support Psychologique</h3>
+                <p className="text-[#c4bcb4]">Accompagnement pour le bien-être mental</p>
               </motion.div>
             </div>
           </motion.div>
@@ -182,41 +184,41 @@ const ReadaptationCardiaque: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-[#D1A24C] mb-6 font-montserrat">
               Services Pratiques
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiMapPin className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiMapPin className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Stationnement</h3>
-                <p className="text-gray-700">Parking gratuit disponible pour votre confort</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3 font-montserrat">Stationnement</h3>
+                <p className="text-[#c4bcb4]">Parking gratuit disponible pour votre confort</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiTruck className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiTruck className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport disponible sur demande</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3 font-montserrat">Transport</h3>
+                <p className="text-[#c4bcb4]">Service de transport disponible sur demande</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiHome className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiHome className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Accueil</h3>
-                <p className="text-gray-700">Salle d'attente confortable et accueil personnalisé</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3 font-montserrat">Accueil</h3>
+                <p className="text-[#c4bcb4]">Salle d'attente confortable et accueil personnalisé</p>
               </motion.div>
             </div>
           </motion.div>
@@ -226,7 +228,7 @@ const ReadaptationCardiaque: React.FC = () => {
         <div className="text-center">
           <Link 
             to="/services/cardiologie"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            className="inline-block bg-[#D1A24C] text-[#1c2431] px-6 py-3 rounded-lg hover:bg-[#c4bcb4] transition-colors duration-300 font-montserrat"
           >
             Retour aux Services de Cardiologie
           </Link>

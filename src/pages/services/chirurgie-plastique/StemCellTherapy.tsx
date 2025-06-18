@@ -26,9 +26,9 @@ const StemCellTherapy: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-gradient-to-r from-blue-600 to-blue-800 pt-32">
+      <section className="relative h-[65vh] pt-32 flex items-center overflow-hidden" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <motion.div
@@ -37,23 +37,25 @@ const StemCellTherapy: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-white max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-montserrat">
               Thérapie par Cellules Souches en Chirurgie Plastique
             </h1>
-            <p className="text-xl mb-8">
+            <p className="text-xl mb-8 font-montserrat">
               Une approche révolutionnaire pour optimiser les résultats de votre chirurgie plastique et améliorer la régénération tissulaire.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/contact', { state: { specialite: 'chirurgie-plastique', service: 'Thérapie par Cellules Souches' } })}
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#D1A24C] text-[#1c2431] px-8 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:bg-[#c4bcb4] hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous
               <FiArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
         </div>
+        {/* Flou/débordement bas du hero */}
+        <div className="absolute left-0 right-0 bottom-0 h-24 pointer-events-none z-20" style={{background: 'linear-gradient(180deg, rgba(44,49,63,0) 0%, rgba(28,36,49,0.7) 60%, #1c2431 100%)', backdropFilter: 'blur(12px)'}} />
       </section>
 
       {/* Main Content */}
@@ -65,30 +67,30 @@ const StemCellTherapy: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-[#D1A24C] mb-6 font-montserrat">
               Qu'est-ce que la Thérapie par Cellules Souches en Chirurgie Plastique ?
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-[#c4bcb4] mb-6">
               La thérapie par cellules souches est une technique complémentaire à la chirurgie plastique qui utilise le potentiel régénératif des cellules souches pour optimiser la cicatrisation et améliorer les résultats esthétiques.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Régénération Tissulaire Optimisée</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3">Régénération Tissulaire Optimisée</h3>
+                <p className="text-[#c4bcb4]">
                   Stimulation naturelle de la réparation et du renouvellement des tissus après chirurgie plastique.
                 </p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Résultats Esthétiques Améliorés</h3>
-                <p className="text-gray-700">
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3">Résultats Esthétiques Améliorés</h3>
+                <p className="text-[#c4bcb4]">
                   Amélioration de la qualité de la peau et optimisation des résultats de votre chirurgie plastique.
                 </p>
               </motion.div>
@@ -103,32 +105,32 @@ const StemCellTherapy: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 font-montserrat">
               Avantages de la Thérapie par Cellules Souches en Chirurgie Plastique
             </h2>
             <div className="space-y-6">
               <motion.div 
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-[#1c2431] shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-[#D1A24C] mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Cicatrisation Optimisée</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-xl font-semibold text-white mb-2">Cicatrisation Optimisée</h3>
+                  <p className="text-[#c4bcb4]">
                     Accélération de la cicatrisation et amélioration de la qualité des cicatrices post-chirurgicales.
                   </p>
                 </div>
               </motion.div>
               <motion.div 
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-xl bg-[#1c2431] shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <FiCheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <FiCheckCircle className="w-6 h-6 text-[#D1A24C] mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Résultats Naturels</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-xl font-semibold text-white mb-2">Résultats Naturels</h3>
+                  <p className="text-[#c4bcb4]">
                     Amélioration naturelle de la texture de la peau et des résultats esthétiques de votre chirurgie.
                   </p>
                 </div>
@@ -144,32 +146,32 @@ const StemCellTherapy: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 font-montserrat">
               Nos Services
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Évaluation Pré-Chirurgicale</h3>
-                <p className="text-gray-700">Analyse de votre condition et planification du traitement par cellules souches en complément de votre chirurgie</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Évaluation Pré-Chirurgicale</h3>
+                <p className="text-[#c4bcb4]">Analyse de votre condition et planification du traitement par cellules souches en complément de votre chirurgie</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Traitement</h3>
-                <p className="text-gray-700">Application précise des cellules souches pour optimiser la cicatrisation</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Traitement</h3>
+                <p className="text-[#c4bcb4]">Application précise des cellules souches pour optimiser la cicatrisation</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Suivi Post-Chirurgical</h3>
-                <p className="text-gray-700">Évaluation des résultats et recommandations pour maintenir les effets optimaux</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Suivi Post-Chirurgical</h3>
+                <p className="text-[#c4bcb4]">Évaluation des résultats et recommandations pour maintenir les effets optimaux</p>
               </motion.div>
             </div>
           </motion.div>
@@ -182,41 +184,41 @@ const StemCellTherapy: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="bg-[#2e333f] rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 font-montserrat">
               Services Pratiques
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiMapPin className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiMapPin className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Stationnement</h3>
-                <p className="text-gray-700">Stationnement gratuit disponible sur place pour votre confort</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3">Stationnement</h3>
+                <p className="text-[#c4bcb4]">Stationnement gratuit disponible sur place pour votre confort</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiTruck className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiTruck className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Transport</h3>
-                <p className="text-gray-700">Service de transport disponible sur demande pour faciliter votre venue</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3">Transport</h3>
+                <p className="text-[#c4bcb4]">Service de transport disponible sur demande pour faciliter votre venue</p>
               </motion.div>
               <motion.div 
                 whileHover={{ y: -5 }}
-                className="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#1c2431] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <FiHome className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-[#c4bcb4] rounded-lg flex items-center justify-center mb-4">
+                  <FiHome className="w-6 h-6 text-[#D1A24C]" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Logement</h3>
-                <p className="text-gray-700">Options d'hébergement disponibles à proximité selon disponibilité</p>
+                <h3 className="text-xl font-semibold text-[#D1A24C] mb-3">Logement</h3>
+                <p className="text-[#c4bcb4]">Options d'hébergement disponibles à proximité selon disponibilité</p>
               </motion.div>
             </div>
           </motion.div>
@@ -229,19 +231,19 @@ const StemCellTherapy: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-gradient-to-r from-[#2e333f] to-[#1c2431] rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4 font-montserrat">
               Prêt à Optimiser les Résultats de Votre Chirurgie Plastique ?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8 font-montserrat">
               Prenez rendez-vous dès aujourd'hui pour votre consultation
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/contact', { state: { specialite: 'chirurgie-plastique', service: 'Thérapie par Cellules Souches' } })}
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#D1A24C] text-[#1c2431] px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto shadow-lg hover:bg-[#c4bcb4] hover:shadow-xl transition-shadow duration-300"
             >
               Prendre Rendez-vous
               <FiArrowRight className="w-5 h-5" />
