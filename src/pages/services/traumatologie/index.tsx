@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiDroplet, FiActivity, FiThermometer, FiRadio, FiBarChart2, FiZap, FiLayers, FiTarget } from 'react-icons/fi';
+import { FiArrowRight, FiDroplet, FiActivity, FiThermometer, FiRadio, FiBarChart2, FiZap, FiLayers, FiTarget, FiHeart, FiPackage, FiAlertTriangle } from 'react-icons/fi';
 import LoadingSpinner from '../../../components/LoadingSpinner';
+import { heroBackground } from '../../../assets/images';
 
 const traumaServices = [
   {
@@ -71,7 +72,7 @@ const Traumatologie: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#1c2431]">
       {/* Hero Section */}
-      <section className="relative h-[55vh] flex items-center justify-center pt-32 overflow-hidden" style={{ backgroundImage: 'url(/src/media/herobackground.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="relative h-[55vh] flex items-center justify-center pt-32 overflow-hidden" style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <motion.h1
